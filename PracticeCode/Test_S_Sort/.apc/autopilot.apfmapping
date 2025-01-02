@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mat.h" path="C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\F2\mat.h"/>
+    <originFiles name="ssort.cpp" path="C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\F2\ssort.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="ssort_tb.cpp" path="C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\F2\ssort_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

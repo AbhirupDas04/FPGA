@@ -1,0 +1,27 @@
+17:40:37 **** Auto Build of configuration Debug for project chacha ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../chacha_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:52:
+../../chacha_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: chacha.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../chacha_bsp/ps7_cortexa9_0/lib -o "chacha.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: chacha.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size chacha.elf  |tee "chacha.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73340	   2648	2112288	2188276	 2163f4	chacha.elf
+'Finished building: chacha.elf.size'
+' '
+
+17:40:39 Build Finished (took 1s.885ms)
+

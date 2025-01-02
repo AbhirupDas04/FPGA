@@ -1,0 +1,467 @@
+
+
+================================================================
+== Vivado HLS Report for 'ls_hw'
+================================================================
+* Date:           Mon Jul  3 14:34:57 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        Test_Folder_Special
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.655|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   96|  126|   96|  126|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+--------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  |  Trip  |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  |  Count | Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+--------+----------+
+        |- Loop 1  |    8|    8|         2|          1|          1|       8|    yes   |
+        |- Loop 2  |    2|   32|         2|          1|          1| 1 ~ 31 |    yes   |
+        |- Loop 3  |   32|   32|         2|          1|          1|      32|    yes   |
+        |- Loop 4  |   17|   17|         4|          2|          1|       8|    yes   |
+        |- Loop 5  |    8|    8|         2|          1|          1|       8|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 2
+  * Pipeline-3: initiation interval (II) = 2, depth = 4
+  * Pipeline-4: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 19
+* Pipeline : 5
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+  Pipeline-1 : II = 1, D = 2, States = { 6 7 }
+  Pipeline-2 : II = 1, D = 2, States = { 9 10 }
+  Pipeline-3 : II = 2, D = 4, States = { 12 13 14 15 }
+  Pipeline-4 : II = 1, D = 2, States = { 17 18 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 6 
+8 --> 9 
+9 --> 11 10 
+10 --> 9 
+11 --> 12 
+12 --> 16 13 
+13 --> 14 
+14 --> 15 
+15 --> 12 
+16 --> 17 
+17 --> 19 18 
+18 --> 17 
+19 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.87>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%shift_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %shift)" [Chacha/chacha.cpp:394]   --->   Operation 20 'read' 'shift_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%index1_read = call i5 @_ssdm_op_Read.ap_auto.i5(i5 %index1)" [Chacha/chacha.cpp:394]   --->   Operation 21 'read' 'index1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%trunc_ln400 = trunc i5 %index1_read to i4" [Chacha/chacha.cpp:400]   --->   Operation 22 'trunc' 'trunc_ln400' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln400_1 = zext i4 %trunc_ln400 to i8" [Chacha/chacha.cpp:400]   --->   Operation 23 'zext' 'zext_ln400_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_4 = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %trunc_ln400, i3 0)" [Chacha/chacha.cpp:400]   --->   Operation 24 'bitconcatenate' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln400_2 = zext i7 %tmp_4 to i8" [Chacha/chacha.cpp:400]   --->   Operation 25 'zext' 'zext_ln400_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (1.87ns)   --->   "%add_ln400 = add i8 %zext_ln400_2, %zext_ln400_1" [Chacha/chacha.cpp:400]   --->   Operation 26 'add' 'add_ln400' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (1.76ns)   --->   "br label %1" [Chacha/chacha.cpp:398]   --->   Operation 27 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 5.16>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %hls_label_21 ]"   --->   Operation 28 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (1.30ns)   --->   "%icmp_ln398 = icmp eq i4 %i_0, -8" [Chacha/chacha.cpp:398]   --->   Operation 29 'icmp' 'icmp_ln398' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 30 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.73ns)   --->   "%i = add i4 %i_0, 1" [Chacha/chacha.cpp:398]   --->   Operation 31 'add' 'i' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %icmp_ln398, label %2, label %hls_label_21" [Chacha/chacha.cpp:398]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%zext_ln400_3 = zext i4 %i_0 to i8" [Chacha/chacha.cpp:400]   --->   Operation 33 'zext' 'zext_ln400_3' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (1.91ns)   --->   "%add_ln400_1 = add i8 %add_ln400, %zext_ln400_3" [Chacha/chacha.cpp:400]   --->   Operation 34 'add' 'add_ln400_1' <Predicate = (!icmp_ln398)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln400_4 = zext i8 %add_ln400_1 to i64" [Chacha/chacha.cpp:400]   --->   Operation 35 'zext' 'zext_ln400_4' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%state_matrix_addr = getelementptr [144 x i8]* %state_matrix, i64 0, i64 %zext_ln400_4" [Chacha/chacha.cpp:400]   --->   Operation 36 'getelementptr' 'state_matrix_addr' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 37 [2/2] (3.25ns)   --->   "%state_matrix_load = load i8* %state_matrix_addr, align 1" [Chacha/chacha.cpp:400]   --->   Operation 37 'load' 'state_matrix_load' <Predicate = (!icmp_ln398)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+
+State 3 <SV = 2> <Delay = 5.57>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str22)" [Chacha/chacha.cpp:398]   --->   Operation 38 'specregionbegin' 'tmp' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [Chacha/chacha.cpp:399]   --->   Operation 39 'specpipeline' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln400 = zext i4 %i_0 to i64" [Chacha/chacha.cpp:400]   --->   Operation 40 'zext' 'zext_ln400' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_3 : Operation 41 [1/2] (3.25ns)   --->   "%state_matrix_load = load i8* %state_matrix_addr, align 1" [Chacha/chacha.cpp:400]   --->   Operation 41 'load' 'state_matrix_load' <Predicate = (!icmp_ln398)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%arr1_addr = getelementptr [8 x i8]* %arr1, i64 0, i64 %zext_ln400" [Chacha/chacha.cpp:400]   --->   Operation 42 'getelementptr' 'arr1_addr' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (2.32ns)   --->   "store i8 %state_matrix_load, i8* %arr1_addr, align 1" [Chacha/chacha.cpp:400]   --->   Operation 43 'store' <Predicate = (!icmp_ln398)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%empty_56 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str22, i32 %tmp)" [Chacha/chacha.cpp:401]   --->   Operation 44 'specregionend' 'empty_56' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "br label %1" [Chacha/chacha.cpp:398]   --->   Operation 45 'br' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 46 [2/2] (0.00ns)   --->   "call fastcc void @convert_hex_to_binar([8 x i8]* %arr1, [32 x i8]* %arr2)" [Chacha/chacha.cpp:403]   --->   Operation 46 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%trunc_ln405 = trunc i6 %shift_read to i5" [Chacha/chacha.cpp:405]   --->   Operation 47 'trunc' 'trunc_ln405' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 1.82>
+ST_5 : Operation 48 [1/2] (0.00ns)   --->   "call fastcc void @convert_hex_to_binar([8 x i8]* %arr1, [32 x i8]* %arr2)" [Chacha/chacha.cpp:403]   --->   Operation 48 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%zext_ln405 = zext i5 %trunc_ln405 to i6" [Chacha/chacha.cpp:405]   --->   Operation 49 'zext' 'zext_ln405' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (1.82ns)   --->   "%sub_ln412 = sub i6 -32, %zext_ln405" [Chacha/chacha.cpp:412]   --->   Operation 50 'sub' 'sub_ln412' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (1.76ns)   --->   "br label %3" [Chacha/chacha.cpp:408]   --->   Operation 51 'br' <Predicate = true> <Delay = 1.76>
+
+State 6 <SV = 4> <Delay = 4.14>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%count2_0_in = phi i6 [ %zext_ln405, %2 ], [ %count2, %hls_label_22_end ]"   --->   Operation 52 'phi' 'count2_0_in' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%i1_0 = phi i5 [ -1, %2 ], [ %i_5, %hls_label_22_end ]"   --->   Operation 53 'phi' 'i1_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (1.36ns)   --->   "%icmp_ln408 = icmp eq i5 %i1_0, 0" [Chacha/chacha.cpp:408]   --->   Operation 54 'icmp' 'icmp_ln408' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%empty_57 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 31, i64 16)"   --->   Operation 55 'speclooptripcount' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "br i1 %icmp_ln408, label %.loopexit, label %hls_label_22_begin" [Chacha/chacha.cpp:408]   --->   Operation 56 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%zext_ln407 = zext i5 %i1_0 to i6" [Chacha/chacha.cpp:407]   --->   Operation 57 'zext' 'zext_ln407' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (1.82ns)   --->   "%count2 = add i6 %count2_0_in, -1" [Chacha/chacha.cpp:407]   --->   Operation 58 'add' 'count2' <Predicate = (!icmp_ln408)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%sext_ln410 = sext i6 %count2 to i64" [Chacha/chacha.cpp:410]   --->   Operation 59 'sext' 'sext_ln410' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%arr2_addr = getelementptr [32 x i8]* %arr2, i64 0, i64 %sext_ln410" [Chacha/chacha.cpp:410]   --->   Operation 60 'getelementptr' 'arr2_addr' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_6 : Operation 61 [2/2] (2.32ns)   --->   "%arr2_load = load i8* %arr2_addr, align 1" [Chacha/chacha.cpp:410]   --->   Operation 61 'load' 'arr2_load' <Predicate = (!icmp_ln408)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_6 : Operation 62 [1/1] (1.42ns)   --->   "%icmp_ln412 = icmp eq i6 %zext_ln407, %sub_ln412" [Chacha/chacha.cpp:412]   --->   Operation 62 'icmp' 'icmp_ln412' <Predicate = (!icmp_ln408)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 63 [1/1] (1.78ns)   --->   "%i_5 = add i5 %i1_0, -1" [Chacha/chacha.cpp:408]   --->   Operation 63 'add' 'i_5' <Predicate = (!icmp_ln408 & !icmp_ln412)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 5> <Delay = 4.64>
+ST_7 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str23)" [Chacha/chacha.cpp:408]   --->   Operation 64 'specregionbegin' 'tmp_s' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_7 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [Chacha/chacha.cpp:409]   --->   Operation 65 'specpipeline' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_7 : Operation 66 [1/2] (2.32ns)   --->   "%arr2_load = load i8* %arr2_addr, align 1" [Chacha/chacha.cpp:410]   --->   Operation 66 'load' 'arr2_load' <Predicate = (!icmp_ln408)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_7 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln410 = zext i5 %i1_0 to i64" [Chacha/chacha.cpp:410]   --->   Operation 67 'zext' 'zext_ln410' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_7 : Operation 68 [1/1] (0.00ns)   --->   "%arr3_addr = getelementptr [32 x i8]* %arr3, i64 0, i64 %zext_ln410" [Chacha/chacha.cpp:410]   --->   Operation 68 'getelementptr' 'arr3_addr' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_7 : Operation 69 [1/1] (2.32ns)   --->   "store i8 %arr2_load, i8* %arr3_addr, align 1" [Chacha/chacha.cpp:410]   --->   Operation 69 'store' <Predicate = (!icmp_ln408)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_7 : Operation 70 [1/1] (0.00ns)   --->   "br i1 %icmp_ln412, label %.loopexit, label %hls_label_22_end" [Chacha/chacha.cpp:412]   --->   Operation 70 'br' <Predicate = (!icmp_ln408)> <Delay = 0.00>
+ST_7 : Operation 71 [1/1] (0.00ns)   --->   "%empty_58 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str23, i32 %tmp_s)" [Chacha/chacha.cpp:415]   --->   Operation 71 'specregionend' 'empty_58' <Predicate = (!icmp_ln408 & !icmp_ln412)> <Delay = 0.00>
+ST_7 : Operation 72 [1/1] (0.00ns)   --->   "br label %3" [Chacha/chacha.cpp:408]   --->   Operation 72 'br' <Predicate = (!icmp_ln408 & !icmp_ln412)> <Delay = 0.00>
+
+State 8 <SV = 6> <Delay = 1.76>
+ST_8 : Operation 73 [1/1] (0.00ns)   --->   "%count_1 = alloca i32"   --->   Operation 73 'alloca' 'count_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 74 [1/1] (0.78ns)   --->   "%xor_ln420 = xor i5 %trunc_ln405, -1" [Chacha/chacha.cpp:420]   --->   Operation 74 'xor' 'xor_ln420' <Predicate = true> <Delay = 0.78> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "%zext_ln420 = zext i5 %xor_ln420 to i6" [Chacha/chacha.cpp:420]   --->   Operation 75 'zext' 'zext_ln420' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 76 [1/1] (1.76ns)   --->   "store i32 31, i32* %count_1" [Chacha/chacha.cpp:418]   --->   Operation 76 'store' <Predicate = true> <Delay = 1.76>
+ST_8 : Operation 77 [1/1] (1.76ns)   --->   "br label %4" [Chacha/chacha.cpp:418]   --->   Operation 77 'br' <Predicate = true> <Delay = 1.76>
+
+State 9 <SV = 7> <Delay = 4.32>
+ST_9 : Operation 78 [1/1] (0.00ns)   --->   "%i2_0 = phi i6 [ 31, %.loopexit ], [ %i_9, %._crit_edge ]"   --->   Operation 78 'phi' 'i2_0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %i2_0, i32 5)" [Chacha/chacha.cpp:418]   --->   Operation 79 'bitselect' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 80 [1/1] (0.00ns)   --->   "%empty_59 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)"   --->   Operation 80 'speclooptripcount' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 81 [1/1] (0.00ns)   --->   "br i1 %tmp_11, label %.preheader.preheader, label %hls_label_23_begin" [Chacha/chacha.cpp:418]   --->   Operation 81 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str24)" [Chacha/chacha.cpp:418]   --->   Operation 82 'specregionbegin' 'tmp_1' <Predicate = (!tmp_11)> <Delay = 0.00>
+ST_9 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [Chacha/chacha.cpp:419]   --->   Operation 83 'specpipeline' <Predicate = (!tmp_11)> <Delay = 0.00>
+ST_9 : Operation 84 [1/1] (1.42ns)   --->   "%icmp_ln420 = icmp sgt i6 %i2_0, %zext_ln420" [Chacha/chacha.cpp:420]   --->   Operation 84 'icmp' 'icmp_ln420' <Predicate = (!tmp_11)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 85 [1/1] (0.00ns)   --->   "br i1 %icmp_ln420, label %._crit_edge, label %hls_label_23_end" [Chacha/chacha.cpp:420]   --->   Operation 85 'br' <Predicate = (!tmp_11)> <Delay = 0.00>
+ST_9 : Operation 86 [1/1] (0.00ns)   --->   "%count_1_load = load i32* %count_1" [Chacha/chacha.cpp:424]   --->   Operation 86 'load' 'count_1_load' <Predicate = (!tmp_11 & !icmp_ln420)> <Delay = 0.00>
+ST_9 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln423 = sext i32 %count_1_load to i64" [Chacha/chacha.cpp:423]   --->   Operation 87 'sext' 'sext_ln423' <Predicate = (!tmp_11 & !icmp_ln420)> <Delay = 0.00>
+ST_9 : Operation 88 [1/1] (0.00ns)   --->   "%arr2_addr_1 = getelementptr [32 x i8]* %arr2, i64 0, i64 %sext_ln423" [Chacha/chacha.cpp:423]   --->   Operation 88 'getelementptr' 'arr2_addr_1' <Predicate = (!tmp_11 & !icmp_ln420)> <Delay = 0.00>
+ST_9 : Operation 89 [2/2] (2.32ns)   --->   "%arr2_load_1 = load i8* %arr2_addr_1, align 1" [Chacha/chacha.cpp:423]   --->   Operation 89 'load' 'arr2_load_1' <Predicate = (!tmp_11 & !icmp_ln420)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_9 : Operation 90 [1/1] (2.55ns)   --->   "%count = add nsw i32 %count_1_load, -1" [Chacha/chacha.cpp:424]   --->   Operation 90 'add' 'count' <Predicate = (!tmp_11 & !icmp_ln420)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 91 [1/1] (1.76ns)   --->   "store i32 %count, i32* %count_1" [Chacha/chacha.cpp:425]   --->   Operation 91 'store' <Predicate = (!tmp_11 & !icmp_ln420)> <Delay = 1.76>
+ST_9 : Operation 92 [1/1] (1.82ns)   --->   "%i_9 = add i6 %i2_0, -1" [Chacha/chacha.cpp:418]   --->   Operation 92 'add' 'i_9' <Predicate = (!tmp_11)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 93 [1/1] (0.00ns)   --->   "br label %4" [Chacha/chacha.cpp:418]   --->   Operation 93 'br' <Predicate = (!tmp_11)> <Delay = 0.00>
+
+State 10 <SV = 8> <Delay = 4.64>
+ST_10 : Operation 94 [1/2] (2.32ns)   --->   "%arr2_load_1 = load i8* %arr2_addr_1, align 1" [Chacha/chacha.cpp:423]   --->   Operation 94 'load' 'arr2_load_1' <Predicate = (!icmp_ln420)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_10 : Operation 95 [1/1] (0.00ns)   --->   "%zext_ln423 = zext i6 %i2_0 to i64" [Chacha/chacha.cpp:423]   --->   Operation 95 'zext' 'zext_ln423' <Predicate = (!icmp_ln420)> <Delay = 0.00>
+ST_10 : Operation 96 [1/1] (0.00ns)   --->   "%arr3_addr_1 = getelementptr [32 x i8]* %arr3, i64 0, i64 %zext_ln423" [Chacha/chacha.cpp:423]   --->   Operation 96 'getelementptr' 'arr3_addr_1' <Predicate = (!icmp_ln420)> <Delay = 0.00>
+ST_10 : Operation 97 [1/1] (2.32ns)   --->   "store i8 %arr2_load_1, i8* %arr3_addr_1, align 1" [Chacha/chacha.cpp:423]   --->   Operation 97 'store' <Predicate = (!icmp_ln420)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_10 : Operation 98 [1/1] (0.00ns)   --->   "%empty_60 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str24, i32 %tmp_1)" [Chacha/chacha.cpp:425]   --->   Operation 98 'specregionend' 'empty_60' <Predicate = (!icmp_ln420)> <Delay = 0.00>
+ST_10 : Operation 99 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Chacha/chacha.cpp:425]   --->   Operation 99 'br' <Predicate = (!icmp_ln420)> <Delay = 0.00>
+
+State 11 <SV = 8> <Delay = 1.76>
+ST_11 : Operation 100 [1/1] (1.76ns)   --->   "br label %.preheader" [Chacha/chacha.cpp:114->Chacha/chacha.cpp:427]   --->   Operation 100 'br' <Predicate = true> <Delay = 1.76>
+
+State 12 <SV = 9> <Delay = 2.32>
+ST_12 : Operation 101 [1/1] (0.00ns)   --->   "%i_0_i = phi i4 [ %i_7, %hls_label_6 ], [ 0, %.preheader.preheader ]"   --->   Operation 101 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 102 [1/1] (1.30ns)   --->   "%icmp_ln114 = icmp eq i4 %i_0_i, -8" [Chacha/chacha.cpp:114->Chacha/chacha.cpp:427]   --->   Operation 102 'icmp' 'icmp_ln114' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 103 [1/1] (0.00ns)   --->   "%empty_61 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 103 'speclooptripcount' 'empty_61' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 104 [1/1] (1.73ns)   --->   "%i_7 = add i4 %i_0_i, 1" [Chacha/chacha.cpp:114->Chacha/chacha.cpp:427]   --->   Operation 104 'add' 'i_7' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 105 [1/1] (0.00ns)   --->   "br i1 %icmp_ln114, label %convert_binary_to_hex_hw.exit.preheader, label %hls_label_6" [Chacha/chacha.cpp:114->Chacha/chacha.cpp:427]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 106 [1/1] (0.00ns)   --->   "%trunc_ln116 = trunc i4 %i_0_i to i3" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 106 'trunc' 'trunc_ln116' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 107 [1/1] (0.00ns)   --->   "%shl_ln = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %trunc_ln116, i2 0)" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 107 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln116 = zext i5 %shl_ln to i64" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 108 'zext' 'zext_ln116' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 109 [1/1] (0.00ns)   --->   "%arr3_addr_5 = getelementptr [32 x i8]* %arr3, i64 0, i64 %zext_ln116" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 109 'getelementptr' 'arr3_addr_5' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 110 [2/2] (2.32ns)   --->   "%arr3_load = load i8* %arr3_addr_5, align 1" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 110 'load' 'arr3_load' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_12 : Operation 111 [1/1] (0.00ns)   --->   "%or_ln117 = or i5 %shl_ln, 1" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 111 'or' 'or_ln117' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 112 [1/1] (0.00ns)   --->   "%zext_ln117 = zext i5 %or_ln117 to i64" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 112 'zext' 'zext_ln117' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 113 [1/1] (0.00ns)   --->   "%arr3_addr_6 = getelementptr [32 x i8]* %arr3, i64 0, i64 %zext_ln117" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 113 'getelementptr' 'arr3_addr_6' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_12 : Operation 114 [2/2] (2.32ns)   --->   "%arr3_load_5 = load i8* %arr3_addr_6, align 1" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 114 'load' 'arr3_load_5' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+
+State 13 <SV = 10> <Delay = 3.87>
+ST_13 : Operation 115 [1/2] (2.32ns)   --->   "%arr3_load = load i8* %arr3_addr_5, align 1" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 115 'load' 'arr3_load' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_13 : Operation 116 [1/1] (1.55ns)   --->   "%icmp_ln116 = icmp eq i8 %arr3_load, 48" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 116 'icmp' 'icmp_ln116' <Predicate = (!icmp_ln114)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 117 [1/2] (2.32ns)   --->   "%arr3_load_5 = load i8* %arr3_addr_6, align 1" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 117 'load' 'arr3_load_5' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_13 : Operation 118 [1/1] (1.55ns)   --->   "%icmp_ln117 = icmp eq i8 %arr3_load_5, 48" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 118 'icmp' 'icmp_ln117' <Predicate = (!icmp_ln114)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 119 [1/1] (0.00ns)   --->   "%or_ln118 = or i5 %shl_ln, 2" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 119 'or' 'or_ln118' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_13 : Operation 120 [1/1] (0.00ns)   --->   "%zext_ln118 = zext i5 %or_ln118 to i64" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 120 'zext' 'zext_ln118' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_13 : Operation 121 [1/1] (0.00ns)   --->   "%arr3_addr_7 = getelementptr [32 x i8]* %arr3, i64 0, i64 %zext_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 121 'getelementptr' 'arr3_addr_7' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_13 : Operation 122 [2/2] (2.32ns)   --->   "%arr3_load_6 = load i8* %arr3_addr_7, align 1" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 122 'load' 'arr3_load_6' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_13 : Operation 123 [1/1] (0.00ns)   --->   "%or_ln119 = or i5 %shl_ln, 3" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 123 'or' 'or_ln119' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_13 : Operation 124 [1/1] (0.00ns)   --->   "%zext_ln119 = zext i5 %or_ln119 to i64" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 124 'zext' 'zext_ln119' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_13 : Operation 125 [1/1] (0.00ns)   --->   "%arr3_addr_8 = getelementptr [32 x i8]* %arr3, i64 0, i64 %zext_ln119" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 125 'getelementptr' 'arr3_addr_8' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_13 : Operation 126 [2/2] (2.32ns)   --->   "%arr3_load_7 = load i8* %arr3_addr_8, align 1" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 126 'load' 'arr3_load_7' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+
+State 14 <SV = 11> <Delay = 6.05>
+ST_14 : Operation 127 [1/2] (2.32ns)   --->   "%arr3_load_6 = load i8* %arr3_addr_7, align 1" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 127 'load' 'arr3_load_6' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_14 : Operation 128 [1/1] (1.55ns)   --->   "%icmp_ln118 = icmp eq i8 %arr3_load_6, 48" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 128 'icmp' 'icmp_ln118' <Predicate = (!icmp_ln114)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 129 [1/2] (2.32ns)   --->   "%arr3_load_7 = load i8* %arr3_addr_8, align 1" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 129 'load' 'arr3_load_7' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_14 : Operation 130 [1/1] (1.55ns)   --->   "%icmp_ln119 = icmp eq i8 %arr3_load_7, 48" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 130 'icmp' 'icmp_ln119' <Predicate = (!icmp_ln114)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node select_ln118)   --->   "%select_ln119 = select i1 %icmp_ln119, i7 48, i7 49" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 131 'select' 'select_ln119' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_7)   --->   "%select_ln123 = select i1 %icmp_ln119, i7 50, i7 51" [Chacha/chacha.cpp:123->Chacha/chacha.cpp:427]   --->   Operation 132 'select' 'select_ln123' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 133 [1/1] (0.00ns) (grouped into LUT with out node select_ln118)   --->   "%select_ln155 = select i1 %icmp_ln119, i7 -27, i7 -26" [Chacha/chacha.cpp:155->Chacha/chacha.cpp:427]   --->   Operation 133 'select' 'select_ln155' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 134 [1/1] (0.97ns)   --->   "%and_ln117 = and i1 %icmp_ln116, %icmp_ln117" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 134 'and' 'and_ln117' <Predicate = (!icmp_ln114)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node select_ln118)   --->   "%and_ln118 = and i1 %and_ln117, %icmp_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 135 'and' 'and_ln118' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 136 [1/1] (1.18ns) (out node of the LUT)   --->   "%select_ln118 = select i1 %and_ln118, i7 %select_ln119, i7 %select_ln155" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 136 'select' 'select_ln118' <Predicate = (!icmp_ln114)> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 137 [1/1] (0.97ns)   --->   "%xor_ln118 = xor i1 %icmp_ln118, true" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 137 'xor' 'xor_ln118' <Predicate = (!icmp_ln114)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 138 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_7)   --->   "%and_ln118_7 = and i1 %and_ln117, %xor_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 138 'and' 'and_ln118_7' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 139 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln118_7 = select i1 %and_ln118_7, i7 %select_ln123, i7 %select_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 139 'select' 'select_ln118_7' <Predicate = (!icmp_ln114)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 15 <SV = 12> <Delay = 8.65>
+ST_15 : Operation 140 [1/1] (0.00ns)   --->   "%tmp_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str7)" [Chacha/chacha.cpp:114->Chacha/chacha.cpp:427]   --->   Operation 140 'specregionbegin' 'tmp_i' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_15 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [Chacha/chacha.cpp:115->Chacha/chacha.cpp:427]   --->   Operation 141 'specpipeline' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_15 : Operation 142 [1/1] (0.00ns)   --->   "%zext_ln119_2 = zext i4 %i_0_i to i64" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 142 'zext' 'zext_ln119_2' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_15 : Operation 143 [1/1] (0.00ns)   --->   "%arr1_addr_3 = getelementptr [8 x i8]* %arr1, i64 0, i64 %zext_ln119_2" [Chacha/chacha.cpp:119->Chacha/chacha.cpp:427]   --->   Operation 143 'getelementptr' 'arr1_addr_3' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_15 : Operation 144 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_8)   --->   "%select_ln129 = select i1 %icmp_ln119, i7 52, i7 53" [Chacha/chacha.cpp:129->Chacha/chacha.cpp:427]   --->   Operation 144 'select' 'select_ln129' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 145 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_9)   --->   "%select_ln133 = select i1 %icmp_ln119, i7 54, i7 55" [Chacha/chacha.cpp:133->Chacha/chacha.cpp:427]   --->   Operation 145 'select' 'select_ln133' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 146 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_10)   --->   "%select_ln141 = select i1 %icmp_ln119, i7 56, i7 57" [Chacha/chacha.cpp:141->Chacha/chacha.cpp:427]   --->   Operation 146 'select' 'select_ln141' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_11)   --->   "%select_ln145 = select i1 %icmp_ln119, i7 -31, i7 -30" [Chacha/chacha.cpp:145->Chacha/chacha.cpp:427]   --->   Operation 147 'select' 'select_ln145' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 148 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_12)   --->   "%select_ln151 = select i1 %icmp_ln119, i7 -29, i7 -28" [Chacha/chacha.cpp:151->Chacha/chacha.cpp:427]   --->   Operation 148 'select' 'select_ln151' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 149 [1/1] (0.00ns) (grouped into LUT with out node and_ln117_3)   --->   "%xor_ln117 = xor i1 %icmp_ln117, true" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 149 'xor' 'xor_ln117' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 150 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln117_3 = and i1 %icmp_ln116, %xor_ln117" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 150 'and' 'and_ln117_3' <Predicate = (!icmp_ln114)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 151 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_8)   --->   "%and_ln118_8 = and i1 %and_ln117_3, %icmp_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 151 'and' 'and_ln118_8' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 152 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln118_8 = select i1 %and_ln118_8, i7 %select_ln129, i7 %select_ln118_7" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 152 'select' 'select_ln118_8' <Predicate = (!icmp_ln114)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 153 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_9)   --->   "%and_ln118_9 = and i1 %and_ln117_3, %xor_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 153 'and' 'and_ln118_9' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 154 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln118_9 = select i1 %and_ln118_9, i7 %select_ln133, i7 %select_ln118_8" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 154 'select' 'select_ln118_9' <Predicate = (!icmp_ln114)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 155 [1/1] (0.00ns) (grouped into LUT with out node and_ln117_4)   --->   "%xor_ln116 = xor i1 %icmp_ln116, true" [Chacha/chacha.cpp:116->Chacha/chacha.cpp:427]   --->   Operation 155 'xor' 'xor_ln116' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 156 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln117_4 = and i1 %icmp_ln117, %xor_ln116" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 156 'and' 'and_ln117_4' <Predicate = (!icmp_ln114)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 157 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_10)   --->   "%and_ln118_10 = and i1 %and_ln117_4, %icmp_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 157 'and' 'and_ln118_10' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 158 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln118_10 = select i1 %and_ln118_10, i7 %select_ln141, i7 %select_ln118_9" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 158 'select' 'select_ln118_10' <Predicate = (!icmp_ln114)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 159 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_11)   --->   "%and_ln118_11 = and i1 %and_ln117_4, %xor_ln118" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 159 'and' 'and_ln118_11' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 160 [1/1] (1.18ns) (out node of the LUT)   --->   "%select_ln118_11 = select i1 %and_ln118_11, i7 %select_ln145, i7 %select_ln118_10" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 160 'select' 'select_ln118_11' <Predicate = (!icmp_ln114)> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 161 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_12)   --->   "%or_ln117_2 = or i1 %icmp_ln116, %icmp_ln117" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 161 'or' 'or_ln117_2' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 162 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_12)   --->   "%xor_ln117_2 = xor i1 %or_ln117_2, true" [Chacha/chacha.cpp:117->Chacha/chacha.cpp:427]   --->   Operation 162 'xor' 'xor_ln117_2' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 163 [1/1] (0.00ns) (grouped into LUT with out node select_ln118_12)   --->   "%and_ln118_12 = and i1 %icmp_ln118, %xor_ln117_2" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 163 'and' 'and_ln118_12' <Predicate = (!icmp_ln114)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 164 [1/1] (1.18ns) (out node of the LUT)   --->   "%select_ln118_12 = select i1 %and_ln118_12, i7 %select_ln151, i7 %select_ln118_11" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 164 'select' 'select_ln118_12' <Predicate = (!icmp_ln114)> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 165 [1/1] (0.00ns)   --->   "%zext_ln118_2 = zext i7 %select_ln118_12 to i8" [Chacha/chacha.cpp:118->Chacha/chacha.cpp:427]   --->   Operation 165 'zext' 'zext_ln118_2' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_15 : Operation 166 [1/1] (2.32ns)   --->   "store i8 %zext_ln118_2, i8* %arr1_addr_3, align 1" [Chacha/chacha.cpp:155->Chacha/chacha.cpp:427]   --->   Operation 166 'store' <Predicate = (!icmp_ln114)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_15 : Operation 167 [1/1] (0.00ns)   --->   "%empty_62 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str7, i32 %tmp_i)" [Chacha/chacha.cpp:160->Chacha/chacha.cpp:427]   --->   Operation 167 'specregionend' 'empty_62' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+ST_15 : Operation 168 [1/1] (0.00ns)   --->   "br label %.preheader" [Chacha/chacha.cpp:114->Chacha/chacha.cpp:427]   --->   Operation 168 'br' <Predicate = (!icmp_ln114)> <Delay = 0.00>
+
+State 16 <SV = 10> <Delay = 1.76>
+ST_16 : Operation 169 [1/1] (1.76ns)   --->   "br label %convert_binary_to_hex_hw.exit" [Chacha/chacha.cpp:429]   --->   Operation 169 'br' <Predicate = true> <Delay = 1.76>
+
+State 17 <SV = 11> <Delay = 2.32>
+ST_17 : Operation 170 [1/1] (0.00ns)   --->   "%i3_0 = phi i4 [ %i_10, %hls_label_24 ], [ 0, %convert_binary_to_hex_hw.exit.preheader ]"   --->   Operation 170 'phi' 'i3_0' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 171 [1/1] (1.30ns)   --->   "%icmp_ln429 = icmp eq i4 %i3_0, -8" [Chacha/chacha.cpp:429]   --->   Operation 171 'icmp' 'icmp_ln429' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 172 [1/1] (0.00ns)   --->   "%empty_63 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 172 'speclooptripcount' 'empty_63' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 173 [1/1] (1.73ns)   --->   "%i_10 = add i4 %i3_0, 1" [Chacha/chacha.cpp:429]   --->   Operation 173 'add' 'i_10' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 174 [1/1] (0.00ns)   --->   "br i1 %icmp_ln429, label %5, label %hls_label_24" [Chacha/chacha.cpp:429]   --->   Operation 174 'br' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 175 [1/1] (0.00ns)   --->   "%zext_ln431 = zext i4 %i3_0 to i64" [Chacha/chacha.cpp:431]   --->   Operation 175 'zext' 'zext_ln431' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_17 : Operation 176 [1/1] (0.00ns)   --->   "%zext_ln431_1 = zext i4 %i3_0 to i8" [Chacha/chacha.cpp:431]   --->   Operation 176 'zext' 'zext_ln431_1' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_17 : Operation 177 [1/1] (1.91ns)   --->   "%add_ln431 = add i8 %add_ln400, %zext_ln431_1" [Chacha/chacha.cpp:431]   --->   Operation 177 'add' 'add_ln431' <Predicate = (!icmp_ln429)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 178 [1/1] (0.00ns)   --->   "%arr1_addr_2 = getelementptr [8 x i8]* %arr1, i64 0, i64 %zext_ln431" [Chacha/chacha.cpp:431]   --->   Operation 178 'getelementptr' 'arr1_addr_2' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_17 : Operation 179 [2/2] (2.32ns)   --->   "%arr1_load = load i8* %arr1_addr_2, align 1" [Chacha/chacha.cpp:431]   --->   Operation 179 'load' 'arr1_load' <Predicate = (!icmp_ln429)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+
+State 18 <SV = 12> <Delay = 5.57>
+ST_18 : Operation 180 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str25)" [Chacha/chacha.cpp:429]   --->   Operation 180 'specregionbegin' 'tmp_2' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_18 : Operation 181 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [Chacha/chacha.cpp:430]   --->   Operation 181 'specpipeline' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_18 : Operation 182 [1/1] (0.00ns)   --->   "%zext_ln431_2 = zext i8 %add_ln431 to i64" [Chacha/chacha.cpp:431]   --->   Operation 182 'zext' 'zext_ln431_2' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_18 : Operation 183 [1/1] (0.00ns)   --->   "%state_matrix_addr_4 = getelementptr [144 x i8]* %state_matrix, i64 0, i64 %zext_ln431_2" [Chacha/chacha.cpp:431]   --->   Operation 183 'getelementptr' 'state_matrix_addr_4' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_18 : Operation 184 [1/2] (2.32ns)   --->   "%arr1_load = load i8* %arr1_addr_2, align 1" [Chacha/chacha.cpp:431]   --->   Operation 184 'load' 'arr1_load' <Predicate = (!icmp_ln429)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_18 : Operation 185 [1/1] (3.25ns)   --->   "store i8 %arr1_load, i8* %state_matrix_addr_4, align 1" [Chacha/chacha.cpp:431]   --->   Operation 185 'store' <Predicate = (!icmp_ln429)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 144> <RAM>
+ST_18 : Operation 186 [1/1] (0.00ns)   --->   "%empty_64 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str25, i32 %tmp_2)" [Chacha/chacha.cpp:432]   --->   Operation 186 'specregionend' 'empty_64' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+ST_18 : Operation 187 [1/1] (0.00ns)   --->   "br label %convert_binary_to_hex_hw.exit" [Chacha/chacha.cpp:429]   --->   Operation 187 'br' <Predicate = (!icmp_ln429)> <Delay = 0.00>
+
+State 19 <SV = 12> <Delay = 0.00>
+ST_19 : Operation 188 [1/1] (0.00ns)   --->   "ret void" [Chacha/chacha.cpp:434]   --->   Operation 188 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.87ns
+The critical path consists of the following:
+	wire read on port 'index1' (Chacha/chacha.cpp:394) [8]  (0 ns)
+	'add' operation ('add_ln400', Chacha/chacha.cpp:400) [13]  (1.87 ns)
+
+ <State 2>: 5.17ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', Chacha/chacha.cpp:398) [16]  (0 ns)
+	'add' operation ('add_ln400_1', Chacha/chacha.cpp:400) [26]  (1.92 ns)
+	'getelementptr' operation ('state_matrix_addr', Chacha/chacha.cpp:400) [28]  (0 ns)
+	'load' operation ('state_matrix_load', Chacha/chacha.cpp:400) on array 'state_matrix' [29]  (3.25 ns)
+
+ <State 3>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_matrix_load', Chacha/chacha.cpp:400) on array 'state_matrix' [29]  (3.25 ns)
+	'store' operation ('store_ln400', Chacha/chacha.cpp:400) of variable 'state_matrix_load', Chacha/chacha.cpp:400 on array 'arr1' [31]  (2.32 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 1.83ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln412', Chacha/chacha.cpp:412) [38]  (1.83 ns)
+
+ <State 6>: 4.15ns
+The critical path consists of the following:
+	'phi' operation ('count2') with incoming values : ('zext_ln405', Chacha/chacha.cpp:405) ('count2', Chacha/chacha.cpp:407) [41]  (0 ns)
+	'add' operation ('count2', Chacha/chacha.cpp:407) [48]  (1.83 ns)
+	'getelementptr' operation ('arr2_addr', Chacha/chacha.cpp:410) [52]  (0 ns)
+	'load' operation ('arr2_load', Chacha/chacha.cpp:410) on array 'arr2' [53]  (2.32 ns)
+
+ <State 7>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('arr2_load', Chacha/chacha.cpp:410) on array 'arr2' [53]  (2.32 ns)
+	'store' operation ('store_ln410', Chacha/chacha.cpp:410) of variable 'arr2_load', Chacha/chacha.cpp:410 on array 'arr3' [56]  (2.32 ns)
+
+ <State 8>: 1.77ns
+The critical path consists of the following:
+	'alloca' operation ('count') [64]  (0 ns)
+	'store' operation ('store_ln418', Chacha/chacha.cpp:418) of constant 31 on local variable 'count' [67]  (1.77 ns)
+
+ <State 9>: 4.32ns
+The critical path consists of the following:
+	'load' operation ('count_1_load', Chacha/chacha.cpp:424) on local variable 'count' [80]  (0 ns)
+	'add' operation ('count', Chacha/chacha.cpp:424) [87]  (2.55 ns)
+	'store' operation ('store_ln425', Chacha/chacha.cpp:425) of variable 'count', Chacha/chacha.cpp:424 on local variable 'count' [89]  (1.77 ns)
+
+ <State 10>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('arr2_load_1', Chacha/chacha.cpp:423) on array 'arr2' [83]  (2.32 ns)
+	'store' operation ('store_ln423', Chacha/chacha.cpp:423) of variable 'arr2_load_1', Chacha/chacha.cpp:423 on array 'arr3' [86]  (2.32 ns)
+
+ <State 11>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', Chacha/chacha.cpp:114->Chacha/chacha.cpp:427) [97]  (1.77 ns)
+
+ <State 12>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', Chacha/chacha.cpp:114->Chacha/chacha.cpp:427) [97]  (0 ns)
+	'getelementptr' operation ('arr3_addr_5', Chacha/chacha.cpp:116->Chacha/chacha.cpp:427) [108]  (0 ns)
+	'load' operation ('arr3_load', Chacha/chacha.cpp:116->Chacha/chacha.cpp:427) on array 'arr3' [109]  (2.32 ns)
+
+ <State 13>: 3.87ns
+The critical path consists of the following:
+	'load' operation ('arr3_load', Chacha/chacha.cpp:116->Chacha/chacha.cpp:427) on array 'arr3' [109]  (2.32 ns)
+	'icmp' operation ('icmp_ln116', Chacha/chacha.cpp:116->Chacha/chacha.cpp:427) [110]  (1.55 ns)
+
+ <State 14>: 6.05ns
+The critical path consists of the following:
+	'load' operation ('arr3_load_6', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) on array 'arr3' [119]  (2.32 ns)
+	'icmp' operation ('icmp_ln118', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [120]  (1.55 ns)
+	'and' operation ('and_ln118', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [137]  (0 ns)
+	'select' operation ('select_ln118', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [138]  (1.19 ns)
+	'select' operation ('select_ln118_7', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [141]  (0.993 ns)
+
+ <State 15>: 8.65ns
+The critical path consists of the following:
+	'xor' operation ('xor_ln117', Chacha/chacha.cpp:117->Chacha/chacha.cpp:427) [142]  (0 ns)
+	'and' operation ('and_ln117_3', Chacha/chacha.cpp:117->Chacha/chacha.cpp:427) [143]  (0.978 ns)
+	'and' operation ('and_ln118_8', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [144]  (0 ns)
+	'select' operation ('select_ln118_8', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [145]  (0.993 ns)
+	'select' operation ('select_ln118_9', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [147]  (0.993 ns)
+	'select' operation ('select_ln118_10', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [151]  (0.993 ns)
+	'select' operation ('select_ln118_11', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [153]  (1.19 ns)
+	'select' operation ('select_ln118_12', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427) [157]  (1.19 ns)
+	'store' operation ('store_ln155', Chacha/chacha.cpp:155->Chacha/chacha.cpp:427) of variable 'zext_ln118_2', Chacha/chacha.cpp:118->Chacha/chacha.cpp:427 on array 'arr1' [159]  (2.32 ns)
+
+ <State 16>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', Chacha/chacha.cpp:429) [165]  (1.77 ns)
+
+ <State 17>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', Chacha/chacha.cpp:429) [165]  (0 ns)
+	'getelementptr' operation ('arr1_addr_2', Chacha/chacha.cpp:431) [178]  (0 ns)
+	'load' operation ('arr1_load', Chacha/chacha.cpp:431) on array 'arr1' [179]  (2.32 ns)
+
+ <State 18>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('arr1_load', Chacha/chacha.cpp:431) on array 'arr1' [179]  (2.32 ns)
+	'store' operation ('store_ln431', Chacha/chacha.cpp:431) of variable 'arr1_load', Chacha/chacha.cpp:431 on array 'state_matrix' [180]  (3.25 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

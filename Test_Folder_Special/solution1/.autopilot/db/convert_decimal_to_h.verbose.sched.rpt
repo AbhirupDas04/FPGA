@@ -1,0 +1,294 @@
+
+
+================================================================
+== Vivado HLS Report for 'convert_decimal_to_h'
+================================================================
+* Date:           Mon Jul  3 14:34:48 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        Test_Folder_Special
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.341|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   10|   10|   10|   10|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    8|    8|         2|          1|          1|     8|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read_6 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %p_read)" [Chacha/chacha.cpp:229]   --->   Operation 5 'read' 'p_read_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (1.76ns)   --->   "br label %1" [Chacha/chacha.cpp:231]   --->   Operation 6 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 8.34>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%quo_0 = phi i32 [ %p_read_6, %0 ], [ %sext_ln233, %hls_label_8_end ]" [Chacha/chacha.cpp:229]   --->   Operation 7 'phi' 'quo_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %hls_label_8_end ]"   --->   Operation 8 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.30ns)   --->   "%icmp_ln231 = icmp eq i4 %i_0, -8" [Chacha/chacha.cpp:231]   --->   Operation 9 'icmp' 'icmp_ln231' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 10 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (1.73ns)   --->   "%i = add i4 %i_0, 1" [Chacha/chacha.cpp:231]   --->   Operation 11 'add' 'i' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "br i1 %icmp_ln231, label %47, label %hls_label_8_begin" [Chacha/chacha.cpp:231]   --->   Operation 12 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str9)" [Chacha/chacha.cpp:231]   --->   Operation 13 'specregionbegin' 'tmp' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [Chacha/chacha.cpp:232]   --->   Operation 14 'specpipeline' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %quo_0, i32 31)" [Chacha/chacha.cpp:233]   --->   Operation 15 'bitselect' 'tmp_12' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (2.55ns)   --->   "%sub_ln233 = sub i32 0, %quo_0" [Chacha/chacha.cpp:233]   --->   Operation 16 'sub' 'sub_ln233' <Predicate = (!icmp_ln231)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_s = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %sub_ln233, i32 4, i32 31)" [Chacha/chacha.cpp:233]   --->   Operation 17 'partselect' 'tmp_s' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln233 = zext i28 %tmp_s to i29" [Chacha/chacha.cpp:233]   --->   Operation 18 'zext' 'zext_ln233' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (2.43ns)   --->   "%sub_ln233_1 = sub i29 0, %zext_ln233" [Chacha/chacha.cpp:233]   --->   Operation 19 'sub' 'sub_ln233_1' <Predicate = (!icmp_ln231)> <Delay = 2.43> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_5 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %quo_0, i32 4, i32 31)" [Chacha/chacha.cpp:233]   --->   Operation 20 'partselect' 'tmp_5' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln233_1 = zext i28 %tmp_5 to i29" [Chacha/chacha.cpp:233]   --->   Operation 21 'zext' 'zext_ln233_1' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.80ns)   --->   "%a = select i1 %tmp_12, i29 %sub_ln233_1, i29 %zext_ln233_1" [Chacha/chacha.cpp:233]   --->   Operation 22 'select' 'a' <Predicate = (!icmp_ln231)> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%sext_ln233 = sext i29 %a to i32" [Chacha/chacha.cpp:233]   --->   Operation 23 'sext' 'sext_ln233' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%trunc_ln234 = trunc i29 %a to i28" [Chacha/chacha.cpp:234]   --->   Operation 24 'trunc' 'trunc_ln234' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%c = call i32 @_ssdm_op_BitConcatenate.i32.i28.i4(i28 %trunc_ln234, i4 0)" [Chacha/chacha.cpp:234]   --->   Operation 25 'bitconcatenate' 'c' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (2.55ns)   --->   "%rem = sub nsw i32 %quo_0, %c" [Chacha/chacha.cpp:235]   --->   Operation 26 'sub' 'rem' <Predicate = (!icmp_ln231)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (2.47ns)   --->   "%icmp_ln237 = icmp eq i32 %quo_0, %c" [Chacha/chacha.cpp:237]   --->   Operation 27 'icmp' 'icmp_ln237' <Predicate = (!icmp_ln231)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %icmp_ln237, label %2, label %3" [Chacha/chacha.cpp:237]   --->   Operation 28 'br' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "br label %hls_label_8_end"   --->   Operation 29 'br' <Predicate = (!icmp_ln231 & !icmp_ln237)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (1.73ns)   --->   "%sub_ln237 = sub i4 7, %i_0" [Chacha/chacha.cpp:237]   --->   Operation 30 'sub' 'sub_ln237' <Predicate = (!icmp_ln231 & icmp_ln237)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln237 = zext i4 %sub_ln237 to i64" [Chacha/chacha.cpp:237]   --->   Operation 31 'zext' 'zext_ln237' <Predicate = (!icmp_ln231 & icmp_ln237)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%hex_addr = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln237" [Chacha/chacha.cpp:237]   --->   Operation 32 'getelementptr' 'hex_addr' <Predicate = (!icmp_ln231 & icmp_ln237)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (2.32ns)   --->   "store i8 48, i8* %hex_addr, align 1" [Chacha/chacha.cpp:237]   --->   Operation 33 'store' <Predicate = (!icmp_ln231 & icmp_ln237)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "br label %hls_label_8_end" [Chacha/chacha.cpp:237]   --->   Operation 34 'br' <Predicate = (!icmp_ln231 & icmp_ln237)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 4.05>
+ST_3 : Operation 35 [1/1] (2.47ns)   --->   "%icmp_ln238 = icmp eq i32 %rem, 1" [Chacha/chacha.cpp:238]   --->   Operation 35 'icmp' 'icmp_ln238' <Predicate = (!icmp_ln237)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br i1 %icmp_ln238, label %4, label %5" [Chacha/chacha.cpp:238]   --->   Operation 36 'br' <Predicate = (!icmp_ln237)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (2.47ns)   --->   "%icmp_ln239 = icmp eq i32 %rem, 2" [Chacha/chacha.cpp:239]   --->   Operation 37 'icmp' 'icmp_ln239' <Predicate = (!icmp_ln237 & !icmp_ln238)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "br i1 %icmp_ln239, label %6, label %7" [Chacha/chacha.cpp:239]   --->   Operation 38 'br' <Predicate = (!icmp_ln237 & !icmp_ln238)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (2.47ns)   --->   "%icmp_ln240 = icmp eq i32 %rem, 3" [Chacha/chacha.cpp:240]   --->   Operation 39 'icmp' 'icmp_ln240' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "br i1 %icmp_ln240, label %8, label %9" [Chacha/chacha.cpp:240]   --->   Operation 40 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (2.47ns)   --->   "%icmp_ln241 = icmp eq i32 %rem, 4" [Chacha/chacha.cpp:241]   --->   Operation 41 'icmp' 'icmp_ln241' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %icmp_ln241, label %10, label %11" [Chacha/chacha.cpp:241]   --->   Operation 42 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (2.47ns)   --->   "%icmp_ln242 = icmp eq i32 %rem, 5" [Chacha/chacha.cpp:242]   --->   Operation 43 'icmp' 'icmp_ln242' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "br i1 %icmp_ln242, label %12, label %13" [Chacha/chacha.cpp:242]   --->   Operation 44 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (2.47ns)   --->   "%icmp_ln243 = icmp eq i32 %rem, 6" [Chacha/chacha.cpp:243]   --->   Operation 45 'icmp' 'icmp_ln243' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %icmp_ln243, label %14, label %15" [Chacha/chacha.cpp:243]   --->   Operation 46 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242)> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (2.47ns)   --->   "%icmp_ln244 = icmp eq i32 %rem, 7" [Chacha/chacha.cpp:244]   --->   Operation 47 'icmp' 'icmp_ln244' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "br i1 %icmp_ln244, label %16, label %17" [Chacha/chacha.cpp:244]   --->   Operation 48 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (2.47ns)   --->   "%icmp_ln245 = icmp eq i32 %rem, 8" [Chacha/chacha.cpp:245]   --->   Operation 49 'icmp' 'icmp_ln245' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "br i1 %icmp_ln245, label %18, label %19" [Chacha/chacha.cpp:245]   --->   Operation 50 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (2.47ns)   --->   "%icmp_ln246 = icmp eq i32 %rem, 9" [Chacha/chacha.cpp:246]   --->   Operation 51 'icmp' 'icmp_ln246' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "br i1 %icmp_ln246, label %20, label %21" [Chacha/chacha.cpp:246]   --->   Operation 52 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245)> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (2.47ns)   --->   "%icmp_ln247 = icmp eq i32 %rem, 10" [Chacha/chacha.cpp:247]   --->   Operation 53 'icmp' 'icmp_ln247' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "br i1 %icmp_ln247, label %22, label %23" [Chacha/chacha.cpp:247]   --->   Operation 54 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (2.47ns)   --->   "%icmp_ln248 = icmp eq i32 %rem, 11" [Chacha/chacha.cpp:248]   --->   Operation 55 'icmp' 'icmp_ln248' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "br i1 %icmp_ln248, label %24, label %25" [Chacha/chacha.cpp:248]   --->   Operation 56 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (2.47ns)   --->   "%icmp_ln249 = icmp eq i32 %rem, 12" [Chacha/chacha.cpp:249]   --->   Operation 57 'icmp' 'icmp_ln249' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "br i1 %icmp_ln249, label %26, label %27" [Chacha/chacha.cpp:249]   --->   Operation 58 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (2.47ns)   --->   "%icmp_ln250 = icmp eq i32 %rem, 13" [Chacha/chacha.cpp:250]   --->   Operation 59 'icmp' 'icmp_ln250' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "br i1 %icmp_ln250, label %28, label %29" [Chacha/chacha.cpp:250]   --->   Operation 60 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249)> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (2.47ns)   --->   "%icmp_ln251 = icmp eq i32 %rem, 14" [Chacha/chacha.cpp:251]   --->   Operation 61 'icmp' 'icmp_ln251' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "br i1 %icmp_ln251, label %30, label %31" [Chacha/chacha.cpp:251]   --->   Operation 62 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (2.47ns)   --->   "%icmp_ln252 = icmp eq i32 %rem, 15" [Chacha/chacha.cpp:252]   --->   Operation 63 'icmp' 'icmp_ln252' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "br i1 %icmp_ln252, label %32, label %._crit_edge" [Chacha/chacha.cpp:252]   --->   Operation 64 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (1.73ns)   --->   "%sub_ln252 = sub i4 7, %i_0" [Chacha/chacha.cpp:252]   --->   Operation 65 'sub' 'sub_ln252' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251 & icmp_ln252)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%zext_ln252 = zext i4 %sub_ln252 to i64" [Chacha/chacha.cpp:252]   --->   Operation 66 'zext' 'zext_ln252' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251 & icmp_ln252)> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%hex_addr_15 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln252" [Chacha/chacha.cpp:252]   --->   Operation 67 'getelementptr' 'hex_addr_15' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251 & icmp_ln252)> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (2.32ns)   --->   "store i8 102, i8* %hex_addr_15, align 1" [Chacha/chacha.cpp:252]   --->   Operation 68 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251 & icmp_ln252)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Chacha/chacha.cpp:252]   --->   Operation 69 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251 & icmp_ln252)> <Delay = 0.00>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "br label %33"   --->   Operation 70 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & !icmp_ln251)> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (1.73ns)   --->   "%sub_ln251 = sub i4 7, %i_0" [Chacha/chacha.cpp:251]   --->   Operation 71 'sub' 'sub_ln251' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & icmp_ln251)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln251 = zext i4 %sub_ln251 to i64" [Chacha/chacha.cpp:251]   --->   Operation 72 'zext' 'zext_ln251' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & icmp_ln251)> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%hex_addr_14 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln251" [Chacha/chacha.cpp:251]   --->   Operation 73 'getelementptr' 'hex_addr_14' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & icmp_ln251)> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (2.32ns)   --->   "store i8 101, i8* %hex_addr_14, align 1" [Chacha/chacha.cpp:251]   --->   Operation 74 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & icmp_ln251)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "br label %33" [Chacha/chacha.cpp:251]   --->   Operation 75 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250 & icmp_ln251)> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "br label %34"   --->   Operation 76 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & !icmp_ln250)> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (1.73ns)   --->   "%sub_ln250 = sub i4 7, %i_0" [Chacha/chacha.cpp:250]   --->   Operation 77 'sub' 'sub_ln250' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & icmp_ln250)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%zext_ln250 = zext i4 %sub_ln250 to i64" [Chacha/chacha.cpp:250]   --->   Operation 78 'zext' 'zext_ln250' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & icmp_ln250)> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%hex_addr_13 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln250" [Chacha/chacha.cpp:250]   --->   Operation 79 'getelementptr' 'hex_addr_13' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & icmp_ln250)> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (2.32ns)   --->   "store i8 100, i8* %hex_addr_13, align 1" [Chacha/chacha.cpp:250]   --->   Operation 80 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & icmp_ln250)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "br label %34" [Chacha/chacha.cpp:250]   --->   Operation 81 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249 & icmp_ln250)> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "br label %35"   --->   Operation 82 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & !icmp_ln249)> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (1.73ns)   --->   "%sub_ln249 = sub i4 7, %i_0" [Chacha/chacha.cpp:249]   --->   Operation 83 'sub' 'sub_ln249' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & icmp_ln249)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%zext_ln249 = zext i4 %sub_ln249 to i64" [Chacha/chacha.cpp:249]   --->   Operation 84 'zext' 'zext_ln249' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & icmp_ln249)> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%hex_addr_12 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln249" [Chacha/chacha.cpp:249]   --->   Operation 85 'getelementptr' 'hex_addr_12' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & icmp_ln249)> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (2.32ns)   --->   "store i8 99, i8* %hex_addr_12, align 1" [Chacha/chacha.cpp:249]   --->   Operation 86 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & icmp_ln249)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "br label %35" [Chacha/chacha.cpp:249]   --->   Operation 87 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248 & icmp_ln249)> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "br label %36"   --->   Operation 88 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & !icmp_ln248)> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (1.73ns)   --->   "%sub_ln248 = sub i4 7, %i_0" [Chacha/chacha.cpp:248]   --->   Operation 89 'sub' 'sub_ln248' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & icmp_ln248)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%zext_ln248 = zext i4 %sub_ln248 to i64" [Chacha/chacha.cpp:248]   --->   Operation 90 'zext' 'zext_ln248' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & icmp_ln248)> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%hex_addr_11 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln248" [Chacha/chacha.cpp:248]   --->   Operation 91 'getelementptr' 'hex_addr_11' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & icmp_ln248)> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (2.32ns)   --->   "store i8 98, i8* %hex_addr_11, align 1" [Chacha/chacha.cpp:248]   --->   Operation 92 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & icmp_ln248)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "br label %36" [Chacha/chacha.cpp:248]   --->   Operation 93 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247 & icmp_ln248)> <Delay = 0.00>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "br label %37"   --->   Operation 94 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & !icmp_ln247)> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (1.73ns)   --->   "%sub_ln247 = sub i4 7, %i_0" [Chacha/chacha.cpp:247]   --->   Operation 95 'sub' 'sub_ln247' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & icmp_ln247)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%zext_ln247 = zext i4 %sub_ln247 to i64" [Chacha/chacha.cpp:247]   --->   Operation 96 'zext' 'zext_ln247' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & icmp_ln247)> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%hex_addr_10 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln247" [Chacha/chacha.cpp:247]   --->   Operation 97 'getelementptr' 'hex_addr_10' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & icmp_ln247)> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (2.32ns)   --->   "store i8 97, i8* %hex_addr_10, align 1" [Chacha/chacha.cpp:247]   --->   Operation 98 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & icmp_ln247)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "br label %37" [Chacha/chacha.cpp:247]   --->   Operation 99 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246 & icmp_ln247)> <Delay = 0.00>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "br label %38"   --->   Operation 100 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & !icmp_ln246)> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (1.73ns)   --->   "%sub_ln246 = sub i4 7, %i_0" [Chacha/chacha.cpp:246]   --->   Operation 101 'sub' 'sub_ln246' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & icmp_ln246)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%zext_ln246 = zext i4 %sub_ln246 to i64" [Chacha/chacha.cpp:246]   --->   Operation 102 'zext' 'zext_ln246' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & icmp_ln246)> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%hex_addr_9 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln246" [Chacha/chacha.cpp:246]   --->   Operation 103 'getelementptr' 'hex_addr_9' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & icmp_ln246)> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (2.32ns)   --->   "store i8 57, i8* %hex_addr_9, align 1" [Chacha/chacha.cpp:246]   --->   Operation 104 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & icmp_ln246)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "br label %38" [Chacha/chacha.cpp:246]   --->   Operation 105 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245 & icmp_ln246)> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "br label %39"   --->   Operation 106 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & !icmp_ln245)> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (1.73ns)   --->   "%sub_ln245 = sub i4 7, %i_0" [Chacha/chacha.cpp:245]   --->   Operation 107 'sub' 'sub_ln245' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & icmp_ln245)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln245 = zext i4 %sub_ln245 to i64" [Chacha/chacha.cpp:245]   --->   Operation 108 'zext' 'zext_ln245' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & icmp_ln245)> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%hex_addr_8 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln245" [Chacha/chacha.cpp:245]   --->   Operation 109 'getelementptr' 'hex_addr_8' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & icmp_ln245)> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (2.32ns)   --->   "store i8 56, i8* %hex_addr_8, align 1" [Chacha/chacha.cpp:245]   --->   Operation 110 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & icmp_ln245)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 111 [1/1] (0.00ns)   --->   "br label %39" [Chacha/chacha.cpp:245]   --->   Operation 111 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244 & icmp_ln245)> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "br label %40"   --->   Operation 112 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & !icmp_ln244)> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] (1.73ns)   --->   "%sub_ln244 = sub i4 7, %i_0" [Chacha/chacha.cpp:244]   --->   Operation 113 'sub' 'sub_ln244' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & icmp_ln244)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%zext_ln244 = zext i4 %sub_ln244 to i64" [Chacha/chacha.cpp:244]   --->   Operation 114 'zext' 'zext_ln244' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & icmp_ln244)> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "%hex_addr_7 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln244" [Chacha/chacha.cpp:244]   --->   Operation 115 'getelementptr' 'hex_addr_7' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & icmp_ln244)> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (2.32ns)   --->   "store i8 55, i8* %hex_addr_7, align 1" [Chacha/chacha.cpp:244]   --->   Operation 116 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & icmp_ln244)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "br label %40" [Chacha/chacha.cpp:244]   --->   Operation 117 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243 & icmp_ln244)> <Delay = 0.00>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "br label %41"   --->   Operation 118 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & !icmp_ln243)> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] (1.73ns)   --->   "%sub_ln243 = sub i4 7, %i_0" [Chacha/chacha.cpp:243]   --->   Operation 119 'sub' 'sub_ln243' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & icmp_ln243)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "%zext_ln243 = zext i4 %sub_ln243 to i64" [Chacha/chacha.cpp:243]   --->   Operation 120 'zext' 'zext_ln243' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & icmp_ln243)> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "%hex_addr_6 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln243" [Chacha/chacha.cpp:243]   --->   Operation 121 'getelementptr' 'hex_addr_6' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & icmp_ln243)> <Delay = 0.00>
+ST_3 : Operation 122 [1/1] (2.32ns)   --->   "store i8 54, i8* %hex_addr_6, align 1" [Chacha/chacha.cpp:243]   --->   Operation 122 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & icmp_ln243)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "br label %41" [Chacha/chacha.cpp:243]   --->   Operation 123 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242 & icmp_ln243)> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "br label %42"   --->   Operation 124 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & !icmp_ln242)> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (1.73ns)   --->   "%sub_ln242 = sub i4 7, %i_0" [Chacha/chacha.cpp:242]   --->   Operation 125 'sub' 'sub_ln242' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & icmp_ln242)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "%zext_ln242 = zext i4 %sub_ln242 to i64" [Chacha/chacha.cpp:242]   --->   Operation 126 'zext' 'zext_ln242' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & icmp_ln242)> <Delay = 0.00>
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "%hex_addr_5 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln242" [Chacha/chacha.cpp:242]   --->   Operation 127 'getelementptr' 'hex_addr_5' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & icmp_ln242)> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (2.32ns)   --->   "store i8 53, i8* %hex_addr_5, align 1" [Chacha/chacha.cpp:242]   --->   Operation 128 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & icmp_ln242)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "br label %42" [Chacha/chacha.cpp:242]   --->   Operation 129 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241 & icmp_ln242)> <Delay = 0.00>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "br label %43"   --->   Operation 130 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & !icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 131 [1/1] (1.73ns)   --->   "%sub_ln241 = sub i4 7, %i_0" [Chacha/chacha.cpp:241]   --->   Operation 131 'sub' 'sub_ln241' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & icmp_ln241)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "%zext_ln241 = zext i4 %sub_ln241 to i64" [Chacha/chacha.cpp:241]   --->   Operation 132 'zext' 'zext_ln241' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%hex_addr_4 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln241" [Chacha/chacha.cpp:241]   --->   Operation 133 'getelementptr' 'hex_addr_4' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 134 [1/1] (2.32ns)   --->   "store i8 52, i8* %hex_addr_4, align 1" [Chacha/chacha.cpp:241]   --->   Operation 134 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & icmp_ln241)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "br label %43" [Chacha/chacha.cpp:241]   --->   Operation 135 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240 & icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 136 [1/1] (0.00ns)   --->   "br label %44"   --->   Operation 136 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & !icmp_ln240)> <Delay = 0.00>
+ST_3 : Operation 137 [1/1] (1.73ns)   --->   "%sub_ln240 = sub i4 7, %i_0" [Chacha/chacha.cpp:240]   --->   Operation 137 'sub' 'sub_ln240' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & icmp_ln240)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "%zext_ln240 = zext i4 %sub_ln240 to i64" [Chacha/chacha.cpp:240]   --->   Operation 138 'zext' 'zext_ln240' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & icmp_ln240)> <Delay = 0.00>
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "%hex_addr_3 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln240" [Chacha/chacha.cpp:240]   --->   Operation 139 'getelementptr' 'hex_addr_3' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & icmp_ln240)> <Delay = 0.00>
+ST_3 : Operation 140 [1/1] (2.32ns)   --->   "store i8 51, i8* %hex_addr_3, align 1" [Chacha/chacha.cpp:240]   --->   Operation 140 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & icmp_ln240)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 141 [1/1] (0.00ns)   --->   "br label %44" [Chacha/chacha.cpp:240]   --->   Operation 141 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239 & icmp_ln240)> <Delay = 0.00>
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "br label %45"   --->   Operation 142 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & !icmp_ln239)> <Delay = 0.00>
+ST_3 : Operation 143 [1/1] (1.73ns)   --->   "%sub_ln239 = sub i4 7, %i_0" [Chacha/chacha.cpp:239]   --->   Operation 143 'sub' 'sub_ln239' <Predicate = (!icmp_ln237 & !icmp_ln238 & icmp_ln239)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 144 [1/1] (0.00ns)   --->   "%zext_ln239 = zext i4 %sub_ln239 to i64" [Chacha/chacha.cpp:239]   --->   Operation 144 'zext' 'zext_ln239' <Predicate = (!icmp_ln237 & !icmp_ln238 & icmp_ln239)> <Delay = 0.00>
+ST_3 : Operation 145 [1/1] (0.00ns)   --->   "%hex_addr_2 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln239" [Chacha/chacha.cpp:239]   --->   Operation 145 'getelementptr' 'hex_addr_2' <Predicate = (!icmp_ln237 & !icmp_ln238 & icmp_ln239)> <Delay = 0.00>
+ST_3 : Operation 146 [1/1] (2.32ns)   --->   "store i8 50, i8* %hex_addr_2, align 1" [Chacha/chacha.cpp:239]   --->   Operation 146 'store' <Predicate = (!icmp_ln237 & !icmp_ln238 & icmp_ln239)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 147 [1/1] (0.00ns)   --->   "br label %45" [Chacha/chacha.cpp:239]   --->   Operation 147 'br' <Predicate = (!icmp_ln237 & !icmp_ln238 & icmp_ln239)> <Delay = 0.00>
+ST_3 : Operation 148 [1/1] (0.00ns)   --->   "br label %46"   --->   Operation 148 'br' <Predicate = (!icmp_ln237 & !icmp_ln238)> <Delay = 0.00>
+ST_3 : Operation 149 [1/1] (1.73ns)   --->   "%sub_ln238 = sub i4 7, %i_0" [Chacha/chacha.cpp:238]   --->   Operation 149 'sub' 'sub_ln238' <Predicate = (!icmp_ln237 & icmp_ln238)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln238 = zext i4 %sub_ln238 to i64" [Chacha/chacha.cpp:238]   --->   Operation 150 'zext' 'zext_ln238' <Predicate = (!icmp_ln237 & icmp_ln238)> <Delay = 0.00>
+ST_3 : Operation 151 [1/1] (0.00ns)   --->   "%hex_addr_1 = getelementptr [8 x i8]* %hex, i64 0, i64 %zext_ln238" [Chacha/chacha.cpp:238]   --->   Operation 151 'getelementptr' 'hex_addr_1' <Predicate = (!icmp_ln237 & icmp_ln238)> <Delay = 0.00>
+ST_3 : Operation 152 [1/1] (2.32ns)   --->   "store i8 49, i8* %hex_addr_1, align 1" [Chacha/chacha.cpp:238]   --->   Operation 152 'store' <Predicate = (!icmp_ln237 & icmp_ln238)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8> <RAM>
+ST_3 : Operation 153 [1/1] (0.00ns)   --->   "br label %46" [Chacha/chacha.cpp:238]   --->   Operation 153 'br' <Predicate = (!icmp_ln237 & icmp_ln238)> <Delay = 0.00>
+ST_3 : Operation 154 [1/1] (0.00ns)   --->   "%empty_66 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str9, i32 %tmp)" [Chacha/chacha.cpp:253]   --->   Operation 154 'specregionend' 'empty_66' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+ST_3 : Operation 155 [1/1] (0.00ns)   --->   "br label %1" [Chacha/chacha.cpp:231]   --->   Operation 155 'br' <Predicate = (!icmp_ln231)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 156 [1/1] (0.00ns)   --->   "ret void" [Chacha/chacha.cpp:254]   --->   Operation 156 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('quo_0', Chacha/chacha.cpp:229) with incoming values : ('p_read_6', Chacha/chacha.cpp:229) ('sext_ln233', Chacha/chacha.cpp:233) [6]  (1.77 ns)
+
+ <State 2>: 8.34ns
+The critical path consists of the following:
+	'phi' operation ('quo_0', Chacha/chacha.cpp:229) with incoming values : ('p_read_6', Chacha/chacha.cpp:229) ('sext_ln233', Chacha/chacha.cpp:233) [6]  (0 ns)
+	'sub' operation ('sub_ln233', Chacha/chacha.cpp:233) [16]  (2.55 ns)
+	'sub' operation ('sub_ln233_1', Chacha/chacha.cpp:233) [19]  (2.43 ns)
+	'select' operation ('a', Chacha/chacha.cpp:233) [22]  (0.804 ns)
+	'sub' operation ('rem', Chacha/chacha.cpp:235) [26]  (2.55 ns)
+
+ <State 3>: 4.06ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln252', Chacha/chacha.cpp:252) [75]  (1.74 ns)
+	'getelementptr' operation ('hex_addr_15', Chacha/chacha.cpp:252) [77]  (0 ns)
+	'store' operation ('store_ln252', Chacha/chacha.cpp:252) of constant 102 on array 'hex' [78]  (2.32 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

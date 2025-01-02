@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="chacha_hw" xd:componentRef="chacha_hw" xd:initiationInterval="660754" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="input.data" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_V_data" xd:busTypeRef="acc_fifo" xd:dataWidth="8"/>
+  <xd:arg xd:name="input.last" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_V_last_V" xd:busTypeRef="acc_fifo" xd:dataWidth="1"/>
+  <xd:arg xd:name="output.data" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_V_data" xd:busTypeRef="acc_fifo" xd:firstOut="15" xd:dataWidth="8"/>
+  <xd:arg xd:name="output.last" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_V_last_V" xd:busTypeRef="acc_fifo" xd:firstOut="15" xd:dataWidth="1"/>
+  <xd:latencyEstimates xd:best-case="602775" xd:worst-case="660753" xd:average-case="631617"/>
+  <xd:resourceEstimates xd:LUT="25211" xd:FF="10779" xd:BRAM="24" xd:DSP="55"/>
+</xd:acceleratorMap>

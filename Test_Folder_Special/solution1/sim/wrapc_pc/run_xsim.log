@@ -1,0 +1,471 @@
+No Error
+
+C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\Test_Folder_Special\solution1\sim\verilog>set PATH= 
+
+C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\Test_Folder_Special\solution1\sim\verilog>call C:/Users/ABHIRUP-ACER/Downloads/Vivado/2019.1/bin/xelab xil_defaultlib.apatb_chacha_hw_top glbl -prj chacha_hw.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile "C:/Users/ABHIRUP-ACER/Downloads/Vivado/2019.1/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s chacha_hw  
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Users/ABHIRUP-ACER/Downloads/Vivado/2019.1/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Users/ABHIRUP-ACER/Downloads/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_chacha_hw_top glbl -prj chacha_hw.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile C:/Users/ABHIRUP-ACER/Downloads/Vivado/2019.1/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s chacha_hw 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/add_2_hw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add_2_hw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/add_hw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add_hw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/AESL_autofifo_input_V_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_input_V_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/AESL_autofifo_input_V_last_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_input_V_last_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/AESL_autofifo_output_V_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_output_V_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/AESL_autofifo_output_V_last_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_output_V_last_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_chacha_hw_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_cipher.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_cipher_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_cipher
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_copy_stpcA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_copy_stpcA_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_copy_stpcA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_dadd_64qcK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_dadd_64qcK
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_dmul_64rcU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_dmul_64rcU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_key.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_key_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_key
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_key_arr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_key_arr_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_key_arr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_mac_muljbC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_mac_muljbC_DSP48_0
+INFO: [VRFC 10-311] analyzing module chacha_hw_mac_muljbC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_mul_43ng8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_43ng8j_MulnS_2
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_43ng8j
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_mul_49nhbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_49nhbi_MulnS_3
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_49nhbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_mul_50nibs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_50nibs_MulnS_4
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_50nibs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_mul_69neOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_69neOg_MulnS_0
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_69neOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_mul_72nfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_72nfYi_MulnS_1
+INFO: [VRFC 10-311] analyzing module chacha_hw_mul_72nfYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_nonce.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_nonce_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_nonce
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_nonce_arr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_nonce_arr_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_nonce_arr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_plaintext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_plaintext_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_plaintext
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_sitodp_sc4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_sitodp_sc4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw_state_mocq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chacha_hw_state_mocq_ram
+INFO: [VRFC 10-311] analyzing module chacha_hw_state_mocq
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/convert_decimal_to_h.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module convert_decimal_to_h
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/convert_hex_to_binar.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module convert_hex_to_binar
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/convert_hex_to_binar_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module convert_hex_to_binar_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ls_hw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ls_hw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ls_hw_arr3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ls_hw_arr3_ram
+INFO: [VRFC 10-311] analyzing module ls_hw_arr3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/pow_generic_doublbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_doublbkb_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_doublbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/pow_generic_doublcud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_doublcud_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_doublcud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/pow_generic_doubldEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_doubldEe_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_doubldEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/pow_generic_double_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_double_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/split_2_hw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module split_2_hw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/split_hw_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module split_hw_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/split_hw_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module split_hw_8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/split_hw_8_str.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module split_hw_8_str_ram
+INFO: [VRFC 10-311] analyzing module split_hw_8_str
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/xor_1_hw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xor_1_hw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/xor_1_hw_arr1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xor_1_hw_arr1_ram
+INFO: [VRFC 10-311] analyzing module xor_1_hw_arr1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/xor_1_hw_arr3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xor_1_hw_arr3_ram
+INFO: [VRFC 10-311] analyzing module xor_1_hw_arr3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/xor_1_hw_arr4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xor_1_hw_arr4_ram
+INFO: [VRFC 10-311] analyzing module xor_1_hw_arr4
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ip/xil_defaultlib/chacha_hw_ap_dadd_3_full_dsp_64.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'chacha_hw_ap_dadd_3_full_dsp_64'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ip/xil_defaultlib/chacha_hw_ap_dmul_4_max_dsp_64.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'chacha_hw_ap_dmul_4_max_dsp_64'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ip/xil_defaultlib/chacha_hw_ap_sitodp_4_no_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'chacha_hw_ap_sitodp_4_no_dsp_32'
+Starting static elaboration
+WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_8' of instantiated unit conflicts with visible identifier [C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ip/xil_defaultlib/chacha_hw_ap_dadd_3_full_dsp_64.vhd:201]
+WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_8' of instantiated unit conflicts with visible identifier [C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ip/xil_defaultlib/chacha_hw_ap_dmul_4_max_dsp_64.vhd:201]
+WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_8' of instantiated unit conflicts with visible identifier [C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/ip/xil_defaultlib/chacha_hw_ap_sitodp_4_no_dsp_32.vhd:196]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package floating_point_v7_1_8.floating_point_v7_1_8_viv_comp
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package axi_utils_v2_0_6.axi_utils_v2_0_6_pkg
+Compiling package floating_point_v7_1_8.floating_point_v7_1_8_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_8.floating_point_v7_1_8_exp_table_...
+Compiling package mult_gen_v12_0_15.mult_gen_v12_0_15_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_8.floating_point_v7_1_8_pkg
+Compiling package floating_point_v7_1_8.flt_utils
+Compiling package xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv_comp
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package floating_point_v7_1_8.vt2mutils
+Compiling package floating_point_v7_1_8.vt2mcomps
+Compiling module xil_defaultlib.chacha_hw_plaintext_ram
+Compiling module xil_defaultlib.chacha_hw_plaintext(DataWidth=8,...
+Compiling module xil_defaultlib.chacha_hw_key_ram
+Compiling module xil_defaultlib.chacha_hw_key(DataWidth=8,Addres...
+Compiling module xil_defaultlib.chacha_hw_nonce_ram
+Compiling module xil_defaultlib.chacha_hw_nonce(DataWidth=8,Addr...
+Compiling module xil_defaultlib.split_hw_8_str_ram
+Compiling module xil_defaultlib.split_hw_8_str(DataWidth=8,Addre...
+Compiling module xil_defaultlib.chacha_hw_cipher_ram
+Compiling module xil_defaultlib.chacha_hw_cipher(DataWidth=8,Add...
+Compiling module xil_defaultlib.xor_1_hw_arr1_ram
+Compiling module xil_defaultlib.xor_1_hw_arr1(DataWidth=8,Addres...
+Compiling module xil_defaultlib.xor_1_hw_arr3_ram
+Compiling module xil_defaultlib.xor_1_hw_arr3(DataWidth=7,Addres...
+Compiling module xil_defaultlib.xor_1_hw_arr4_ram
+Compiling module xil_defaultlib.xor_1_hw_arr4(DataWidth=7,Addres...
+Compiling module xil_defaultlib.chacha_hw_state_mocq_ram
+Compiling module xil_defaultlib.chacha_hw_state_mocq(DataWidth=8...
+Compiling module xil_defaultlib.chacha_hw_key_arr_ram
+Compiling module xil_defaultlib.chacha_hw_key_arr(DataWidth=8,Ad...
+Compiling module xil_defaultlib.chacha_hw_nonce_arr_ram
+Compiling module xil_defaultlib.chacha_hw_nonce_arr(DataWidth=8,...
+Compiling module xil_defaultlib.chacha_hw_copy_stpcA_ram
+Compiling module xil_defaultlib.chacha_hw_copy_stpcA(DataWidth=8...
+Compiling module xil_defaultlib.pow_generic_doublbkb_rom
+Compiling module xil_defaultlib.pow_generic_doublbkb(DataWidth=5...
+Compiling module xil_defaultlib.pow_generic_doublcud_rom
+Compiling module xil_defaultlib.pow_generic_doublcud(DataWidth=2...
+Compiling module xil_defaultlib.pow_generic_doubldEe_rom
+Compiling module xil_defaultlib.pow_generic_doubldEe(DataWidth=4...
+Compiling module xil_defaultlib.chacha_hw_mul_69neOg_MulnS_0
+Compiling module xil_defaultlib.chacha_hw_mul_69neOg(ID=1,NUM_ST...
+Compiling module xil_defaultlib.chacha_hw_mul_72nfYi_MulnS_1
+Compiling module xil_defaultlib.chacha_hw_mul_72nfYi(ID=1,NUM_ST...
+Compiling module xil_defaultlib.chacha_hw_mul_43ng8j_MulnS_2
+Compiling module xil_defaultlib.chacha_hw_mul_43ng8j(ID=1,NUM_ST...
+Compiling module xil_defaultlib.chacha_hw_mul_49nhbi_MulnS_3
+Compiling module xil_defaultlib.chacha_hw_mul_49nhbi(ID=1,NUM_ST...
+Compiling module xil_defaultlib.chacha_hw_mul_50nibs_MulnS_4
+Compiling module xil_defaultlib.chacha_hw_mul_50nibs(ID=1,NUM_ST...
+Compiling module xil_defaultlib.chacha_hw_mac_muljbC_DSP48_0
+Compiling module xil_defaultlib.chacha_hw_mac_muljbC(ID=1,NUM_ST...
+Compiling module xil_defaultlib.pow_generic_double_s
+Compiling module xil_defaultlib.convert_hex_to_binar
+Compiling module xil_defaultlib.add_hw
+Compiling module xil_defaultlib.xor_1_hw
+Compiling module xil_defaultlib.add_2_hw
+Compiling module xil_defaultlib.ls_hw_arr3_ram
+Compiling module xil_defaultlib.ls_hw_arr3(DataWidth=7,AddressRa...
+Compiling module xil_defaultlib.ls_hw
+Compiling module xil_defaultlib.convert_decimal_to_h
+Compiling module xil_defaultlib.split_2_hw
+Compiling module xil_defaultlib.split_hw_8
+Compiling module xil_defaultlib.split_hw_3
+Compiling module xil_defaultlib.convert_hex_to_binar_1
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=52)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=14,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=54,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=11,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=2,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=16,length=0)\]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_8.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_8.zero_det_sel [\zero_det_sel(c_xdevicefamily="z...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=55,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_8.shift_msb_first [\shift_msb_first(a_width=54,regi...]
+Compiling architecture rtl of entity floating_point_v7_1_8.alignment [\alignment(c_xdevicefamily="zynq...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=47,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=7,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=18,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=25,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=48,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=9,length=0)\]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=9)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=56,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_8.addsub_dsp [\addsub_dsp(c_xdevicefamily="zyn...]
+Compiling architecture rtl of entity floating_point_v7_1_8.addsub [\addsub(c_xdevicefamily="zynq",c...]
+Compiling architecture rtl of entity floating_point_v7_1_8.align_add [\align_add(c_xdevicefamily="zynq...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=6,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_8.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_8.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+Compiling architecture rtl of entity floating_point_v7_1_8.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=56)\]
+Compiling architecture rtl of entity floating_point_v7_1_8.shift_msb_first [\shift_msb_first(a_width=56,resu...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(b_width=18,c_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=19,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=28,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=29,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=3,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_8.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_8.norm_and_round_logic [\norm_and_round_logic(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(length=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=12,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=12,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=12,length=2)\]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_8.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_8.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_8.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=11,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_8.compare_eq [\compare_eq(c_xdevicefamily="zyn...]
+Compiling architecture synth of entity floating_point_v7_1_8.compare [\compare(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=11)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=12)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=2,length=2,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(length=2,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_add_exp [\flt_add_exp(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_8.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_add_logic [\flt_add_logic(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_add [\flt_add(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=64,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_8.floating_point_v7_1_8_viv [\floating_point_v7_1_8_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_8.floating_point_v7_1_8 [\floating_point_v7_1_8(c_xdevice...]
+Compiling architecture chacha_hw_ap_dadd_3_full_dsp_64_arch of entity xil_defaultlib.chacha_hw_ap_dadd_3_full_dsp_64 [chacha_hw_ap_dadd_3_full_dsp_64_...]
+Compiling module xil_defaultlib.chacha_hw_dadd_64qcK(ID=1)
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=19,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=17,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=17,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=17,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=17,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,b_...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=17,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=19,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=19,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=19,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=2,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=19,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=17)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_8.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=19,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_8.fix_mult_dsp48e1_dbl [\fix_mult_dsp48e1_dbl(mult_usage...]
+Compiling architecture rtl of entity floating_point_v7_1_8.fix_mult [\fix_mult(c_xdevicefamily="zynq"...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_8.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_8.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(length=3)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=2,length=3,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(length=3,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=4,length=3,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=11,length=3)\]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="z...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=54,length=0,fast_in...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_8.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_8.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.flt_mult [\flt_mult(c_xdevicefamily="zynq"...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture xilinx of entity floating_point_v7_1_8.floating_point_v7_1_8_viv [\floating_point_v7_1_8_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_8.floating_point_v7_1_8 [\floating_point_v7_1_8(c_xdevice...]
+Compiling architecture chacha_hw_ap_dmul_4_max_dsp_64_arch of entity xil_defaultlib.chacha_hw_ap_dmul_4_max_dsp_64 [chacha_hw_ap_dmul_4_max_dsp_64_d...]
+Compiling module xil_defaultlib.chacha_hw_dmul_64rcU(ID=1)
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=31,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=32)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=32,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_8.shift_msb_first [\shift_msb_first(a_width=32,dist...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=26,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_8.delay [\delay(width=27,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_8.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_8.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_8.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+Compiling architecture synth of entity floating_point_v7_1_8.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture struct of entity floating_point_v7_1_8.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_8.floating_point_v7_1_8_viv [\floating_point_v7_1_8_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_8.floating_point_v7_1_8 [\floating_point_v7_1_8(c_xdevice...]
+Compiling architecture chacha_hw_ap_sitodp_4_no_dsp_32_arch of entity xil_defaultlib.chacha_hw_ap_sitodp_4_no_dsp_32 [chacha_hw_ap_sitodp_4_no_dsp_32_...]
+Compiling module xil_defaultlib.chacha_hw_sitodp_sc4(ID=1)
+Compiling module xil_defaultlib.chacha_hw
+Compiling module xil_defaultlib.AESL_autofifo_input_V_data
+Compiling module xil_defaultlib.AESL_autofifo_input_V_last_V
+Compiling module xil_defaultlib.AESL_autofifo_output_V_data
+Compiling module xil_defaultlib.AESL_autofifo_output_V_last_V
+Compiling module xil_defaultlib.apatb_chacha_hw_top
+Compiling module work.glbl
+Built simulation snapshot chacha_hw
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/xsim.dir/chacha_hw/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul  3 00:40:17 2023...
+
+****** xsim v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/chacha_hw/xsim_script.tcl
+# xsim {chacha_hw} -autoloadwcfg -tclbatch {chacha_hw.tcl}
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source chacha_hw.tcl
+## run all
+Warning: OPMODE Input Warning : The OPMODE 011XX11 with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_chacha_hw_top/AESL_inst_chacha_hw/chacha_hw_dmul_64rcU_U56/chacha_hw_ap_dmul_4_max_dsp_64_u/U0/i_synth/mult/OP/i_non_prim/R_AND_R/logic/R_AND_R/dsp48_e1/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: C:\Users\ABHIRUP-ACER\Downloads\Vivado\2019.1\data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_chacha_hw_top/AESL_inst_chacha_hw/chacha_hw_dadd_64qcK_U55/chacha_hw_ap_dadd_3_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: C:\Users\ABHIRUP-ACER\Downloads\Vivado\2019.1\data/vhdl/src/unisims/primitive/DSP48E1.vhd
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+// RTL Simulation : 1 / 1 [100.00%] @ "6199545000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 6199585 ns : File "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw.autotb.v" Line 357
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:04:42 . Memory (MB): peak = 221.734 ; gain = 0.000
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Jul  3 00:45:07 2023...
+No Error

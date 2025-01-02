@@ -1,0 +1,191 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F2/ssort.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from F2/ssort.cpp:1:
+F2/ssort.cpp:33:21: error: use of undeclared identifier 'n'
+ for(int i = 0; i < n; i++) {
+                    ^
+F2/ssort.cpp:34:30: error: use of undeclared identifier 'n'
+        for(int j = i+1; j < n;j++) {
+                             ^
+F2/ssort.cpp:35:16: error: use of undeclared identifier 'arr'; did you mean 'arr1'?
+            if(arr[i] > arr[j]) {
+               ^~~
+               arr1
+F2/ssort.cpp:12:8: note: 'arr1' declared here
+M_TYPE arr1[10],result[10];
+       ^
+F2/ssort.cpp:35:25: error: use of undeclared identifier 'arr'; did you mean 'arr1'?
+            if(arr[i] > arr[j]) {
+                        ^~~
+                        arr1
+F2/ssort.cpp:12:8: note: 'arr1' declared here
+M_TYPE arr1[10],result[10];
+       ^
+F2/ssort.cpp:36:28: error: use of undeclared identifier 'arr'; did you mean 'arr1'?
+                int temp = arr[i];
+                           ^~~
+                           arr1
+F2/ssort.cpp:12:8: note: 'arr1' declared here
+M_TYPE arr1[10],result[10];
+       ^
+F2/ssort.cpp:37:17: error: use of undeclared identifier 'arr'; did you mean 'arr1'?
+                arr[i] = arr[j];
+                ^~~
+                arr1
+F2/ssort.cpp:12:8: note: 'arr1' declared here
+M_TYPE arr1[10],result[10];
+       ^
+F2/ssort.cpp:37:26: error: use of undeclared identifier 'arr'; did you mean 'arr1'?
+                arr[i] = arr[j];
+                         ^~~
+                         arr1
+F2/ssort.cpp:12:8: note: 'arr1' declared here
+M_TYPE arr1[10],result[10];
+       ^
+F2/ssort.cpp:38:17: error: use of undeclared identifier 'arr'; did you mean 'arr1'?
+                arr[j] = temp;
+                ^~~
+                arr1
+F2/ssort.cpp:12:8: note: 'arr1' declared here
+M_TYPE arr1[10],result[10];
+       ^
+8 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F2/ssort.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from F2/ssort.cpp:1:
+F2/ssort.cpp:33:21: error: use of undeclared identifier 'n'
+ for(int i = 0; i < n; i++) {
+                    ^
+F2/ssort.cpp:34:30: error: use of undeclared identifier 'n'
+        for(int j = i+1; j < n;j++) {
+                             ^
+2 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F2/ssort.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:21 . Memory (MB): peak = 179.070 ; gain = 87.582
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:21 . Memory (MB): peak = 179.070 ; gain = 87.582
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:25 . Memory (MB): peak = 179.070 ; gain = 87.582
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 's_sort_hw' (F2/ssort.cpp:36) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:26 . Memory (MB): peak = 209.688 ; gain = 118.199
+INFO: [XFORM 203-101] Partitioning array 'arr1' (F2/ssort.cpp:12) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 's_sort_hw' (F2/ssort.cpp:36) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:27 . Memory (MB): peak = 266.891 ; gain = 175.402
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:27 . Memory (MB): peak = 281.961 ; gain = 190.473
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 's_sort_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 's_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 27.699 seconds; current allocated memory: 214.134 MB.
+INFO: [HLS 200-434] Only 2 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.224 seconds; current allocated memory: 214.826 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 's_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 's_sort_hw/input_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 's_sort_hw/input_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 's_sort_hw/output_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 's_sort_hw/output_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 's_sort_hw' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 's_sort_hw_sitofp_32ns_32_6_1' to 's_sort_hw_sitofp_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 's_sort_hw_fcmp_32ns_32ns_1_2_1' to 's_sort_hw_fcmp_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 's_sort_hw_mux_104_32_1_1' to 's_sort_hw_mux_104dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 's_sort_hw_fcmp_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 's_sort_hw_mux_104dEe': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 's_sort_hw_sitofp_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 's_sort_hw'.
+INFO: [HLS 200-111]  Elapsed time: 0.293 seconds; current allocated memory: 216.027 MB.
+INFO: [RTMG 210-278] Implementing memory 's_sort_hw_result_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:07 ; elapsed = 00:00:31 . Memory (MB): peak = 294.613 ; gain = 203.125
+INFO: [VHDL 208-304] Generating VHDL RTL for s_sort_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for s_sort_hw.
+INFO: [HLS 200-112] Total elapsed time: 31.101 seconds; peak allocated memory: 216.027 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

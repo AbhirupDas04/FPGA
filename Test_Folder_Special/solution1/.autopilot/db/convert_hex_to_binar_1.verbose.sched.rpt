@@ -1,0 +1,173 @@
+
+
+================================================================
+== Vivado HLS Report for 'convert_hex_to_binar_1'
+================================================================
+* Date:           Mon Jul  3 14:35:02 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        Test_Folder_Special
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.829|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    0|    0|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.82>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%p_read_1 = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %p_read4)" [Chacha/chacha.cpp:94]   --->   Operation 2 'read' 'p_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%p_read_2 = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %p_read3)" [Chacha/chacha.cpp:94]   --->   Operation 3 'read' 'p_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_read_3 = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %p_read2)" [Chacha/chacha.cpp:94]   --->   Operation 4 'read' 'p_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read_4 = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %p_read1)" [Chacha/chacha.cpp:94]   --->   Operation 5 'read' 'p_read_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read_5 = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %p_read)" [Chacha/chacha.cpp:94]   --->   Operation 6 'read' 'p_read_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.55ns)   --->   "%icmp_ln94 = icmp eq i8 %p_read_5, 48" [Chacha/chacha.cpp:94]   --->   Operation 7 'icmp' 'icmp_ln94' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (1.81ns)   --->   "br i1 %icmp_ln94, label %._crit_edge.0, label %1" [Chacha/chacha.cpp:94]   --->   Operation 8 'br' <Predicate = true> <Delay = 1.81>
+ST_1 : Operation 9 [1/1] (1.55ns)   --->   "%icmp_ln95 = icmp eq i8 %p_read_5, 49" [Chacha/chacha.cpp:95]   --->   Operation 9 'icmp' 'icmp_ln95' <Predicate = (!icmp_ln94)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (1.81ns)   --->   "br i1 %icmp_ln95, label %._crit_edge.0, label %2" [Chacha/chacha.cpp:95]   --->   Operation 10 'br' <Predicate = (!icmp_ln94)> <Delay = 1.81>
+ST_1 : Operation 11 [1/1] (1.55ns)   --->   "%icmp_ln96 = icmp eq i8 %p_read_5, 50" [Chacha/chacha.cpp:96]   --->   Operation 11 'icmp' 'icmp_ln96' <Predicate = (!icmp_ln94 & !icmp_ln95)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (1.81ns)   --->   "br i1 %icmp_ln96, label %._crit_edge.0, label %3" [Chacha/chacha.cpp:96]   --->   Operation 12 'br' <Predicate = (!icmp_ln94 & !icmp_ln95)> <Delay = 1.81>
+ST_1 : Operation 13 [1/1] (1.55ns)   --->   "%icmp_ln97 = icmp eq i8 %p_read_5, 51" [Chacha/chacha.cpp:97]   --->   Operation 13 'icmp' 'icmp_ln97' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (1.81ns)   --->   "br i1 %icmp_ln97, label %._crit_edge.0, label %4" [Chacha/chacha.cpp:97]   --->   Operation 14 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96)> <Delay = 1.81>
+ST_1 : Operation 15 [1/1] (1.55ns)   --->   "%icmp_ln98 = icmp eq i8 %p_read_5, 52" [Chacha/chacha.cpp:98]   --->   Operation 15 'icmp' 'icmp_ln98' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (1.81ns)   --->   "br i1 %icmp_ln98, label %._crit_edge.0, label %5" [Chacha/chacha.cpp:98]   --->   Operation 16 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97)> <Delay = 1.81>
+ST_1 : Operation 17 [1/1] (1.55ns)   --->   "%icmp_ln99 = icmp eq i8 %p_read_5, 53" [Chacha/chacha.cpp:99]   --->   Operation 17 'icmp' 'icmp_ln99' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (1.81ns)   --->   "br i1 %icmp_ln99, label %._crit_edge.0, label %6" [Chacha/chacha.cpp:99]   --->   Operation 18 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98)> <Delay = 1.81>
+ST_1 : Operation 19 [1/1] (1.55ns)   --->   "%icmp_ln100 = icmp eq i8 %p_read_5, 54" [Chacha/chacha.cpp:100]   --->   Operation 19 'icmp' 'icmp_ln100' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (1.81ns)   --->   "br i1 %icmp_ln100, label %._crit_edge.0, label %7" [Chacha/chacha.cpp:100]   --->   Operation 20 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99)> <Delay = 1.81>
+ST_1 : Operation 21 [1/1] (1.55ns)   --->   "%icmp_ln101 = icmp eq i8 %p_read_5, 55" [Chacha/chacha.cpp:101]   --->   Operation 21 'icmp' 'icmp_ln101' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (1.81ns)   --->   "br i1 %icmp_ln101, label %._crit_edge.0, label %8" [Chacha/chacha.cpp:101]   --->   Operation 22 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100)> <Delay = 1.81>
+ST_1 : Operation 23 [1/1] (1.55ns)   --->   "%icmp_ln102 = icmp eq i8 %p_read_5, 56" [Chacha/chacha.cpp:102]   --->   Operation 23 'icmp' 'icmp_ln102' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (1.81ns)   --->   "br i1 %icmp_ln102, label %._crit_edge.0, label %9" [Chacha/chacha.cpp:102]   --->   Operation 24 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101)> <Delay = 1.81>
+ST_1 : Operation 25 [1/1] (1.55ns)   --->   "%icmp_ln103 = icmp eq i8 %p_read_5, 57" [Chacha/chacha.cpp:103]   --->   Operation 25 'icmp' 'icmp_ln103' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (1.81ns)   --->   "br i1 %icmp_ln103, label %._crit_edge.0, label %10" [Chacha/chacha.cpp:103]   --->   Operation 26 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102)> <Delay = 1.81>
+ST_1 : Operation 27 [1/1] (1.55ns)   --->   "%icmp_ln104 = icmp eq i8 %p_read_5, 97" [Chacha/chacha.cpp:104]   --->   Operation 27 'icmp' 'icmp_ln104' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (1.81ns)   --->   "br i1 %icmp_ln104, label %._crit_edge.0, label %11" [Chacha/chacha.cpp:104]   --->   Operation 28 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103)> <Delay = 1.81>
+ST_1 : Operation 29 [1/1] (1.55ns)   --->   "%icmp_ln105 = icmp eq i8 %p_read_5, 98" [Chacha/chacha.cpp:105]   --->   Operation 29 'icmp' 'icmp_ln105' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (1.81ns)   --->   "br i1 %icmp_ln105, label %._crit_edge.0, label %12" [Chacha/chacha.cpp:105]   --->   Operation 30 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104)> <Delay = 1.81>
+ST_1 : Operation 31 [1/1] (1.55ns)   --->   "%icmp_ln106 = icmp eq i8 %p_read_5, 99" [Chacha/chacha.cpp:106]   --->   Operation 31 'icmp' 'icmp_ln106' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (1.81ns)   --->   "br i1 %icmp_ln106, label %._crit_edge.0, label %13" [Chacha/chacha.cpp:106]   --->   Operation 32 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105)> <Delay = 1.81>
+ST_1 : Operation 33 [1/1] (1.55ns)   --->   "%icmp_ln107 = icmp eq i8 %p_read_5, 100" [Chacha/chacha.cpp:107]   --->   Operation 33 'icmp' 'icmp_ln107' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 34 [1/1] (1.81ns)   --->   "br i1 %icmp_ln107, label %._crit_edge.0, label %14" [Chacha/chacha.cpp:107]   --->   Operation 34 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106)> <Delay = 1.81>
+ST_1 : Operation 35 [1/1] (1.55ns)   --->   "%icmp_ln108 = icmp eq i8 %p_read_5, 101" [Chacha/chacha.cpp:108]   --->   Operation 35 'icmp' 'icmp_ln108' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106 & !icmp_ln107)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (1.55ns)   --->   "%icmp_ln109 = icmp eq i8 %p_read_5, 102" [Chacha/chacha.cpp:109]   --->   Operation 36 'icmp' 'icmp_ln109' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106 & !icmp_ln107)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 37 [1/1] (0.97ns)   --->   "%or_ln108 = or i1 %icmp_ln108, %icmp_ln109" [Chacha/chacha.cpp:108]   --->   Operation 37 'or' 'or_ln108' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106 & !icmp_ln107)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (1.21ns)   --->   "%select_ln108 = select i1 %icmp_ln108, i5 -16, i5 -15" [Chacha/chacha.cpp:108]   --->   Operation 38 'select' 'select_ln108' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106 & !icmp_ln107)> <Delay = 1.21> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 39 [1/1] (1.81ns)   --->   "br label %._crit_edge.0" [Chacha/chacha.cpp:108]   --->   Operation 39 'br' <Predicate = (!icmp_ln94 & !icmp_ln95 & !icmp_ln96 & !icmp_ln97 & !icmp_ln98 & !icmp_ln99 & !icmp_ln100 & !icmp_ln101 & !icmp_ln102 & !icmp_ln103 & !icmp_ln104 & !icmp_ln105 & !icmp_ln106 & !icmp_ln107)> <Delay = 1.81>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%write_flag3_15 = phi i1 [ true, %0 ], [ true, %1 ], [ true, %2 ], [ true, %3 ], [ true, %4 ], [ true, %5 ], [ true, %6 ], [ true, %7 ], [ true, %8 ], [ true, %9 ], [ true, %10 ], [ true, %11 ], [ true, %12 ], [ true, %13 ], [ %or_ln108, %14 ]" [Chacha/chacha.cpp:108]   --->   Operation 40 'phi' 'write_flag3_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_1)   --->   "%bin_1_15 = phi i5 [ -16, %0 ], [ -16, %1 ], [ -16, %2 ], [ -16, %3 ], [ -15, %4 ], [ -15, %5 ], [ -15, %6 ], [ -15, %7 ], [ -16, %8 ], [ -16, %9 ], [ -16, %10 ], [ -16, %11 ], [ -15, %12 ], [ -15, %13 ], [ -15, %14 ]"   --->   Operation 41 'phi' 'bin_1_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node select_ln111)   --->   "%bin_0_15 = phi i5 [ -16, %0 ], [ -16, %1 ], [ -16, %2 ], [ -16, %3 ], [ -16, %4 ], [ -16, %5 ], [ -16, %6 ], [ -16, %7 ], [ -15, %8 ], [ -15, %9 ], [ -15, %10 ], [ -15, %11 ], [ -15, %12 ], [ -15, %13 ], [ -15, %14 ]"   --->   Operation 42 'phi' 'bin_0_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_2)   --->   "%bin_2_15 = phi i5 [ -16, %0 ], [ -16, %1 ], [ -15, %2 ], [ -15, %3 ], [ -16, %4 ], [ -16, %5 ], [ -15, %6 ], [ -15, %7 ], [ -16, %8 ], [ -16, %9 ], [ -15, %10 ], [ -15, %11 ], [ -16, %12 ], [ -16, %13 ], [ -15, %14 ]"   --->   Operation 43 'phi' 'bin_2_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_3)   --->   "%bin_3_15 = phi i5 [ -16, %0 ], [ -15, %1 ], [ -16, %2 ], [ -15, %3 ], [ -16, %4 ], [ -15, %5 ], [ -16, %6 ], [ -15, %7 ], [ -16, %8 ], [ -15, %9 ], [ -16, %10 ], [ -15, %11 ], [ -16, %12 ], [ -15, %13 ], [ %select_ln108, %14 ]" [Chacha/chacha.cpp:108]   --->   Operation 44 'phi' 'bin_3_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_1)   --->   "%sext_ln111 = sext i5 %bin_1_15 to i6" [Chacha/chacha.cpp:111]   --->   Operation 45 'sext' 'sext_ln111' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node select_ln111)   --->   "%sext_ln111_1 = sext i5 %bin_0_15 to i6" [Chacha/chacha.cpp:111]   --->   Operation 46 'sext' 'sext_ln111_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_2)   --->   "%sext_ln111_2 = sext i5 %bin_2_15 to i6" [Chacha/chacha.cpp:111]   --->   Operation 47 'sext' 'sext_ln111_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_3)   --->   "%sext_ln111_3 = sext i5 %bin_3_15 to i6" [Chacha/chacha.cpp:111]   --->   Operation 48 'sext' 'sext_ln111_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_1)   --->   "%zext_ln111 = zext i6 %sext_ln111 to i8" [Chacha/chacha.cpp:111]   --->   Operation 49 'zext' 'zext_ln111' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node select_ln111)   --->   "%zext_ln111_1 = zext i6 %sext_ln111_1 to i8" [Chacha/chacha.cpp:111]   --->   Operation 50 'zext' 'zext_ln111_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_2)   --->   "%zext_ln111_2 = zext i6 %sext_ln111_2 to i8" [Chacha/chacha.cpp:111]   --->   Operation 51 'zext' 'zext_ln111_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node select_ln111_3)   --->   "%zext_ln111_3 = zext i6 %sext_ln111_3 to i8" [Chacha/chacha.cpp:111]   --->   Operation 52 'zext' 'zext_ln111_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln111 = select i1 %write_flag3_15, i8 %zext_ln111_1, i8 %p_read_4" [Chacha/chacha.cpp:111]   --->   Operation 53 'select' 'select_ln111' <Predicate = true> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln111_1 = select i1 %write_flag3_15, i8 %zext_ln111, i8 %p_read_3" [Chacha/chacha.cpp:111]   --->   Operation 54 'select' 'select_ln111_1' <Predicate = true> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln111_2 = select i1 %write_flag3_15, i8 %zext_ln111_2, i8 %p_read_2" [Chacha/chacha.cpp:111]   --->   Operation 55 'select' 'select_ln111_2' <Predicate = true> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln111_3 = select i1 %write_flag3_15, i8 %zext_ln111_3, i8 %p_read_1" [Chacha/chacha.cpp:111]   --->   Operation 56 'select' 'select_ln111_3' <Predicate = true> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%mrv = insertvalue { i8, i8, i8, i8 } undef, i8 %select_ln111, 0" [Chacha/chacha.cpp:111]   --->   Operation 57 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i8, i8, i8, i8 } %mrv, i8 %select_ln111_1, 1" [Chacha/chacha.cpp:111]   --->   Operation 58 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue { i8, i8, i8, i8 } %mrv_1, i8 %select_ln111_2, 2" [Chacha/chacha.cpp:111]   --->   Operation 59 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue { i8, i8, i8, i8 } %mrv_2, i8 %select_ln111_3, 3" [Chacha/chacha.cpp:111]   --->   Operation 60 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "ret { i8, i8, i8, i8 } %mrv_3" [Chacha/chacha.cpp:111]   --->   Operation 61 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 5.83ns
+The critical path consists of the following:
+	wire read on port 'p_read' (Chacha/chacha.cpp:94) [10]  (0 ns)
+	'icmp' operation ('icmp_ln108', Chacha/chacha.cpp:108) [53]  (1.55 ns)
+	'select' operation ('select_ln108', Chacha/chacha.cpp:108) [56]  (1.22 ns)
+	multiplexor before 'phi' operation ('bin_3_15', Chacha/chacha.cpp:108) with incoming values : ('select_ln108', Chacha/chacha.cpp:108) [63]  (1.81 ns)
+	'phi' operation ('bin_3_15', Chacha/chacha.cpp:108) with incoming values : ('select_ln108', Chacha/chacha.cpp:108) [63]  (0 ns)
+	'select' operation ('select_ln111_3', Chacha/chacha.cpp:111) [75]  (1.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,8 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../Chacha/chacha_tb.cpp in debug mode
+   Compiling ../../../../Chacha/chacha.cpp in debug mode
+   Generating csim.exe
+No Error
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

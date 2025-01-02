@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="chacha_header.h" path="C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\Chacha\chacha_header.h"/>
+    <originFiles name="chacha.cpp" path="C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\Chacha\chacha.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="chacha_tb.cpp" path="C:\Users\ABHIRUP-ACER\OneDrive\Documents\FPGA\Chacha\chacha_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

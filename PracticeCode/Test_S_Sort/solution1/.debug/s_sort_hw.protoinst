@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"s_sort_hw": {
+			"proto_instances": {
+			}
+		}
+	}
+}

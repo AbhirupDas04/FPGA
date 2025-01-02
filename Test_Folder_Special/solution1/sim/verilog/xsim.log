@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# xsim v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Jul  3 00:40:19 2023
+# Process ID: 4480
+# Current directory: C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/chacha_hw/xsim_script.tcl}
+# Log file: C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/xsim.log
+# Journal file: C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/chacha_hw/xsim_script.tcl
+# xsim {chacha_hw} -autoloadwcfg -tclbatch {chacha_hw.tcl}
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source chacha_hw.tcl
+## run all
+Warning: OPMODE Input Warning : The OPMODE 011XX11 with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_chacha_hw_top/AESL_inst_chacha_hw/chacha_hw_dmul_64rcU_U56/chacha_hw_ap_dmul_4_max_dsp_64_u/U0/i_synth/mult/OP/i_non_prim/R_AND_R/logic/R_AND_R/dsp48_e1/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: C:\Users\ABHIRUP-ACER\Downloads\Vivado\2019.1\data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_chacha_hw_top/AESL_inst_chacha_hw/chacha_hw_dadd_64qcK_U55/chacha_hw_ap_dadd_3_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: C:\Users\ABHIRUP-ACER\Downloads\Vivado\2019.1\data/vhdl/src/unisims/primitive/DSP48E1.vhd
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+// RTL Simulation : 1 / 1 [100.00%] @ "6199545000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 6199585 ns : File "C:/Users/ABHIRUP-ACER/OneDrive/Documents/FPGA/Test_Folder_Special/solution1/sim/verilog/chacha_hw.autotb.v" Line 357
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:04:42 . Memory (MB): peak = 221.734 ; gain = 0.000
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Jul  3 00:45:07 2023...

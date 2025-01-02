@@ -1,0 +1,330 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F1/bsort.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from F1/bsort.cpp:1:
+F1/bsort.cpp:49:20: error: use of undeclared identifier 'mat_res'
+ local_stream.data=mat_res[i][j];
+                   ^
+F1/bsort.cpp:49:31: error: use of undeclared identifier 'j'
+ local_stream.data=mat_res[i][j];
+                              ^
+2 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F1/bsort.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 178.746 ; gain = 87.223
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 178.746 ; gain = 87.223
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:23 . Memory (MB): peak = 178.746 ; gain = 87.223
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'b_sort_hw' (F1/bsort.cpp:38) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:24 . Memory (MB): peak = 211.012 ; gain = 119.488
+INFO: [XFORM 203-101] Partitioning array 'arr1' (F1/bsort.cpp:12) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'b_sort_hw' (F1/bsort.cpp:38) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 267.543 ; gain = 176.020
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:26 . Memory (MB): peak = 282.609 ; gain = 191.086
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'b_sort_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'b_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 25.869 seconds; current allocated memory: 214.096 MB.
+INFO: [HLS 200-434] Only 2 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.359 seconds; current allocated memory: 214.826 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'b_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/input_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/input_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/output_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/output_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'b_sort_hw' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_sitofp_32ns_32_6_1' to 'b_sort_hw_sitofp_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_fcmp_32ns_32ns_1_2_1' to 'b_sort_hw_fcmp_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_mux_104_32_1_1' to 'b_sort_hw_mux_104dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_fcmp_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_mux_104dEe': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_sitofp_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'b_sort_hw'.
+INFO: [HLS 200-111]  Elapsed time: 0.383 seconds; current allocated memory: 216.039 MB.
+INFO: [RTMG 210-278] Implementing memory 'b_sort_hw_result_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:30 . Memory (MB): peak = 295.238 ; gain = 203.715
+INFO: [VHDL 208-304] Generating VHDL RTL for b_sort_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for b_sort_hw.
+INFO: [HLS 200-112] Total elapsed time: 29.787 seconds; peak allocated memory: 216.039 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F1/bsort.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:24 . Memory (MB): peak = 178.871 ; gain = 87.410
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:24 . Memory (MB): peak = 178.871 ; gain = 87.410
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:28 . Memory (MB): peak = 178.871 ; gain = 87.410
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'b_sort_hw' (F1/bsort.cpp:40) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:29 . Memory (MB): peak = 210.426 ; gain = 118.965
+INFO: [XFORM 203-101] Partitioning array 'arr1' (F1/bsort.cpp:12) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'b_sort_hw' (F1/bsort.cpp:40) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:30 . Memory (MB): peak = 270.145 ; gain = 178.684
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-3' (F1/bsort.cpp:34:16) in function 'b_sort_hw' : 
+
+the outer loop is not a perfect loop because either the parent loop or the sub loop has no invariant trip count.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:31 . Memory (MB): peak = 281.996 ; gain = 190.535
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'b_sort_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'b_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3.1'.
+WARNING: [SCHED 204-68] The II Violation in module 'b_sort_hw' (Loop: Loop 3.1): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation ('result_addr_3_write_ln42', F1/bsort.cpp:42) of variable 'tmp_5', F1/bsort.cpp:42 on array 'result', F1/bsort.cpp:12 and 'load' operation ('x', F1/bsort.cpp:38) on array 'result', F1/bsort.cpp:12.
+WARNING: [SCHED 204-68] The II Violation in module 'b_sort_hw' (Loop: Loop 3.1): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation ('result_addr_3_write_ln42', F1/bsort.cpp:42) of variable 'tmp_5', F1/bsort.cpp:42 on array 'result', F1/bsort.cpp:12 and 'load' operation ('x', F1/bsort.cpp:38) on array 'result', F1/bsort.cpp:12.
+WARNING: [SCHED 204-68] The II Violation in module 'b_sort_hw' (Loop: Loop 3.1): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation ('result_addr_3_write_ln42', F1/bsort.cpp:42) of variable 'tmp_5', F1/bsort.cpp:42 on array 'result', F1/bsort.cpp:12 and 'load' operation ('x', F1/bsort.cpp:38) on array 'result', F1/bsort.cpp:12.
+WARNING: [SCHED 204-68] The II Violation in module 'b_sort_hw' (Loop: Loop 3.1): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation ('result_addr_3_write_ln42', F1/bsort.cpp:42) of variable 'tmp_5', F1/bsort.cpp:42 on array 'result', F1/bsort.cpp:12 and 'load' operation ('x', F1/bsort.cpp:38) on array 'result', F1/bsort.cpp:12.
+WARNING: [SCHED 204-68] The II Violation in module 'b_sort_hw' (Loop: Loop 3.1): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between 'store' operation ('result_addr_3_write_ln42', F1/bsort.cpp:42) of variable 'tmp_5', F1/bsort.cpp:42 on array 'result', F1/bsort.cpp:12 and 'load' operation ('x', F1/bsort.cpp:38) on array 'result', F1/bsort.cpp:12.
+WARNING: [SCHED 204-68] The II Violation in module 'b_sort_hw' (Loop: Loop 3.1): Unable to enforce a carried dependence constraint (II = 9, distance = 1, offset = 1)
+   between 'store' operation ('result_addr_3_write_ln42', F1/bsort.cpp:42) of variable 'tmp_5', F1/bsort.cpp:42 on array 'result', F1/bsort.cpp:12 and 'load' operation ('x', F1/bsort.cpp:38) on array 'result', F1/bsort.cpp:12.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 10, Depth = 10.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 31.227 seconds; current allocated memory: 214.227 MB.
+INFO: [HLS 200-434] Only 4 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.675 seconds; current allocated memory: 214.984 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'b_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/input_V_data' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/input_V_last_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/output_V_data' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/output_V_last_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'b_sort_hw' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_sitofp_32ns_32_6_1' to 'b_sort_hw_sitofp_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_fcmp_32ns_32ns_1_2_1' to 'b_sort_hw_fcmp_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_mux_104_32_1_1' to 'b_sort_hw_mux_104dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_fcmp_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_mux_104dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_sitofp_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'b_sort_hw'.
+INFO: [HLS 200-111]  Elapsed time: 0.407 seconds; current allocated memory: 215.958 MB.
+INFO: [RTMG 210-278] Implementing memory 'b_sort_hw_result_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 295.520 ; gain = 204.059
+INFO: [VHDL 208-304] Generating VHDL RTL for b_sort_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for b_sort_hw.
+INFO: [HLS 200-112] Total elapsed time: 36.145 seconds; peak allocated memory: 215.958 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'F1/bsort.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 179.484 ; gain = 87.895
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 179.484 ; gain = 87.895
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:26 . Memory (MB): peak = 179.484 ; gain = 87.895
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'b_sort_hw' (F1/bsort.cpp:40) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:27 . Memory (MB): peak = 207.637 ; gain = 116.047
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'b_sort_hw' (F1/bsort.cpp:40) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:28 . Memory (MB): peak = 267.082 ; gain = 175.492
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:29 . Memory (MB): peak = 282.129 ; gain = 190.539
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'b_sort_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'b_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 28.896 seconds; current allocated memory: 213.615 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 214.179 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'b_sort_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/input_V_data' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/input_V_last_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/output_V_data' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'b_sort_hw/output_V_last_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'b_sort_hw' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_sitofp_32ns_32_6_1' to 'b_sort_hw_sitofp_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'b_sort_hw_fcmp_32ns_32ns_1_2_1' to 'b_sort_hw_fcmp_32cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_fcmp_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'b_sort_hw_sitofp_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'b_sort_hw'.
+INFO: [HLS 200-111]  Elapsed time: 0.323 seconds; current allocated memory: 214.924 MB.
+INFO: [RTMG 210-278] Implementing memory 'b_sort_hw_arr1_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'b_sort_hw_result_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:33 . Memory (MB): peak = 295.156 ; gain = 203.566
+INFO: [VHDL 208-304] Generating VHDL RTL for b_sort_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for b_sort_hw.
+INFO: [HLS 200-112] Total elapsed time: 32.599 seconds; peak allocated memory: 214.924 MB.

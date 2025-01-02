@@ -1,0 +1,70 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'chacha_hw'" level="0">
+<item name = "Date">Mon Jul  3 14:35:13 2023
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">Test_Folder_Special</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.514, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">602775, 660753, 602775, 660753, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_pow_generic_double_s_fu_2419">pow_generic_double_s, 25, 25, 1, 1, function</column>
+<column name="grp_add_hw_fu_2430">add_hw, 102, 102, 102, 102, none</column>
+<column name="grp_xor_1_hw_fu_2457">xor_1_hw, 102, 102, 102, 102, none</column>
+<column name="grp_add_2_hw_fu_2484">add_2_hw, 102, 102, 102, 102, none</column>
+<column name="grp_ls_hw_fu_2496">ls_hw, 96, 126, 96, 126, none</column>
+<column name="grp_convert_decimal_to_h_fu_2518">convert_decimal_to_h, 10, 10, 10, 10, none</column>
+<column name="grp_split_2_hw_fu_2525">split_2_hw, 5, 68, 5, 68, none</column>
+<column name="grp_split_hw_8_fu_2536">split_hw_8, 137, 137, 137, 137, none</column>
+<column name="grp_split_hw_3_fu_2542">split_hw_3, 52, 52, 52, 52, none</column>
+<column name="call_ret7_i_convert_hex_to_binar_1_fu_2548">convert_hex_to_binar_1, 0, 0, 1, 1, function</column>
+<column name="call_ret_i_convert_hex_to_binar_1_fu_2557">convert_hex_to_binar_1, 0, 0, 1, 1, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">750, 750, 2, 1, 1, 750, yes</column>
+<column name="- Loop 2">64, 64, 2, 1, 1, 64, yes</column>
+<column name="- Loop 3">24, 24, 2, 1, 1, 24, yes</column>
+<column name="- Loop 4">8, 8, 2, 1, 1, 8, yes</column>
+<column name="- Loop 5">135, 135, 45, 13, 1, 8, yes</column>
+<column name="- Loop 6">600276, 658254, 100046 ~ 109709, -, -, 6, no</column>
+<column name=" + Loop 6.1">65, 65, 3, 1, 1, 64, yes</column>
+<column name=" + Loop 6.2">24, 24, 2, 1, 1, 24, yes</column>
+<column name=" + Loop 6.3">8, 8, 2, 1, 1, 8, yes</column>
+<column name=" + Loop 6.4">129, 129, 3, 1, 1, 128, yes</column>
+<column name=" + Loop 6.5">97920, 107520, 9792 ~ 10752, -, -, 10, no</column>
+<column name=" + Loop 6.6">1664, 1664, 104, -, -, 16, no</column>
+<column name="- Loop 7">753, 753, 5, 1, 1, 750, yes</column>
+<column name="- Loop 8">750, 750, 2, 1, 1, 750, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
